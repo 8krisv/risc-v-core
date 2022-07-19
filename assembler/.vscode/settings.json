@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "bst.h": "c",
-        "etc.h": "c",
-        "sstream": "c"
-    }
-}
