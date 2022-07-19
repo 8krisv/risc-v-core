@@ -1,0 +1,3 @@
+*.v.bak
+/.vscode
+*.out

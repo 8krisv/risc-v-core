@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at DATAMEM.v(77): always construct contains both blocking and non-blocking assignments File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.v Line: 77

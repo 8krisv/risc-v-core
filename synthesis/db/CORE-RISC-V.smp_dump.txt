@@ -1,0 +1,6 @@
+
+State Machine - |CORE|RCU:Rcu|State_Register
+Name State_Register.State_reset State_Register.State_Feeding_1 State_Register.State_Feeding_0 
+State_Register.State_reset 0 0 0 
+State_Register.State_Feeding_0 1 0 1 
+State_Register.State_Feeding_1 1 1 0 

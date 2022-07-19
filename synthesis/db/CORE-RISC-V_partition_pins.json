@@ -1,0 +1,21 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "WSIGNAL_RegFile_Write",
+					"strict" : false
+				},
+				{
+					"name" : "WSIGNAL_En",
+					"strict" : false
+				},
+				{
+					"name" : "WSIGNAL_Clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
