@@ -1,1 +1,1 @@
-Simple risc-v core for using in educational purposes 
+Simple risc-v core for use in educational purposes 
