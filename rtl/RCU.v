@@ -40,9 +40,9 @@ RCU_Insmem_Read
 //  State declarations
 //=======================================================
 
-localparam State_reset				= 2'b00;
-localparam State_Feeding_0			= 2'b01;
-localparam State_Feeding_1			= 2'b10;
+localparam State_reset				= 1'b0;
+localparam State_Feeding			= 1'b1;
+
 
 //=======================================================
 //  PORT declarations
@@ -61,8 +61,8 @@ output reg RCU_Insmem_Read;
 //=======================================================
 //  REG/WIRE DECLARATIONS
 //=======================================================
-reg [1:0] State_Register;
-reg [1:0] State_Signal;
+reg State_Register;
+reg State_Signal;
 
 // Next state combinational logic
 always @(*)
@@ -73,10 +73,9 @@ begin
 	State_reset: if(!RCU_Pc_Reset)
 						State_Signal=State_reset;
 					 else
-						State_Signal=State_Feeding_0;
+						State_Signal=State_Feeding;
 						
-	State_Feeding_0: State_Signal=State_Feeding_1;
-	State_Feeding_1: State_Signal=State_Feeding_1;
+	State_Feeding: State_Signal=State_Feeding;
 					
 	default: State_Signal =State_reset;
 	
@@ -108,31 +107,20 @@ begin
 			RCU_Pc_Reset=1'b1; 
 			RCU_Enpc_Set=1'b0;
 			RCU_Enpc_Reset=1'b0;
-			RCU_Ir_Reset=1'b0;
+			RCU_Ir_Reset=1'b1;
 			RCU_Ir_Set=1'b0;
-			RCU_RegFIle_Reset=1'b0;
+			RCU_RegFIle_Reset=1'b1;
 			RCU_Insmem_Read=1'b0;
 		end
 		
-		State_Feeding_0:
+		State_Feeding:
 		begin
 			RCU_Pc_Reset=1'b0; 
 			RCU_Enpc_Set=1'b1;
 			RCU_Enpc_Reset=1'b1;
-			RCU_Ir_Reset=1'b1;
+			RCU_Ir_Reset=1'b0;
 			RCU_Ir_Set=1'b1;
-			RCU_RegFIle_Reset=1'b1;
-			RCU_Insmem_Read=1'b1;
-		end
-		
-		State_Feeding_1:
-		begin
-			RCU_Pc_Reset=1'b0; 
-			RCU_Enpc_Set=1'b1;
-			RCU_Enpc_Reset=1'b1;
-			RCU_Ir_Reset=1'b1;
-			RCU_Ir_Set=1'b1;
-			RCU_RegFIle_Reset=1'b1;
+			RCU_RegFIle_Reset=1'b0;
 			RCU_Insmem_Read=1'b1;
 		end
 		
@@ -141,9 +129,9 @@ begin
 			RCU_Pc_Reset=1'b1; 
 			RCU_Enpc_Set=1'b0;
 			RCU_Enpc_Reset=1'b0;
-			RCU_Ir_Reset=1'b0;
+			RCU_Ir_Reset=1'b1;
 			RCU_Ir_Set=1'b0;
-			RCU_RegFIle_Reset=1'b0;
+			RCU_RegFIle_Reset=1'b1;
 			RCU_Insmem_Read=1'b0;	
 		end
 		

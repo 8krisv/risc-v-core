@@ -5,13 +5,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	REG_NEG
 
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module DATAMEM
-
-Top level modules:
-	DATAMEM
-
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module ACU
@@ -39,6 +32,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	MUX_2_1
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CORE_tb
+
+Top level modules:
+	CORE_tb
 
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -89,13 +89,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	ADDER
 
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CORE
-
-Top level modules:
-	CORE
-
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module BRU
@@ -124,12 +117,26 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	INS_MEM
 
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DATAMEM
+
+Top level modules:
+	DATAMEM
+
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module LSU
 
 Top level modules:
 	LSU
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module REG_FILE
+
+Top level modules:
+	REG_FILE
 
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -144,13 +151,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	MCU
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_FILE
-
-Top level modules:
-	REG_FILE
 
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

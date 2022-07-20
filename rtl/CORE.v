@@ -1,5 +1,5 @@
 /*#########################################################################
-//# RISC-V FIXED CLOCK CYCLE CPU (RV32I BASE INSTRUCTION SET)
+//# RISC-V FIXED CLOCK CYCLE CORE (RV32I BASE INSTRUCTION SET)
 //#########################################################################
 //#
 //# Copyright (C) 2021 Jose Maria Jaramillo Hoyos
@@ -139,7 +139,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Iregister (
 
 //////////// INPUTS //////////
 .REG_Clk(CORE_Clk_in),
-.REG_Reset(~Rcu_Ir_Reset_Wire),
+.REG_Reset(Rcu_Ir_Reset_Wire),
 .REG_Set(Rcu_Ir_Set_Wire),
 .REG_Data_InBUS(CORE_Insmem_Readdata_InBUS),
 //////////// OUTPUTS //////////
@@ -149,7 +149,6 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Iregister (
 
 
 /*Program counter instantiation*/
-
 
 REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Pc (
 

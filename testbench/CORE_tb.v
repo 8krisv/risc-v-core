@@ -49,6 +49,7 @@ wire [DATAWIDTH-1:0] core_writedata_outbus;
 wire [DATAWIDTH-1:0] core_datamem_addr_outbus;
 wire [DATAWIDTH-1:0] ins_mem_data_outbus;
 wire [DATAWIDTH-1:0] data_mem_data_outbus;
+wire data_mem_request_ready;
 
 
 /* Device Under Test (DUT) instantiation */
@@ -60,7 +61,7 @@ CORE #(.DATAWIDTH(DATAWIDTH)) RiscCore(
 .CORE_Clk_in(tb_clk_50),
 .CORE_Reset_in(tb_reset),
 .CORE_Insmem_Readdata_InBUS(ins_mem_data_outbus),
-.CORE_Datamem_Readdata_InBUS(),
+.CORE_Datamem_Readdata_InBUS(data_mem_data_outbus),
 
 //// outputs ////
 
