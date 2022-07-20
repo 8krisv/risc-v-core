@@ -4,15 +4,327 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "WSIGNAL_RegFile_Write",
+					"name" : "DATAMEM_Data_Out[0]",
 					"strict" : false
 				},
 				{
-					"name" : "WSIGNAL_En",
+					"name" : "DATAMEM_Data_Out[1]",
 					"strict" : false
 				},
 				{
-					"name" : "WSIGNAL_Clk",
+					"name" : "DATAMEM_Data_Out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[16]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[17]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[18]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[19]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[20]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[21]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[22]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[23]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[24]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[25]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[26]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[27]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[28]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[29]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[30]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_Out[31]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Re",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Byteenable[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Byteenable[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Byteenable[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Byteenable[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Clk",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_We",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[24]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[16]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[25]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[17]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[26]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[18]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[27]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[19]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[28]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[20]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[29]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[21]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[30]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[22]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[15]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[31]",
+					"strict" : false
+				},
+				{
+					"name" : "DATAMEM_Data_In[23]",
 					"strict" : false
 				}
 			]

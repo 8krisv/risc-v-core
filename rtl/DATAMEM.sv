@@ -55,6 +55,8 @@ output [31:0] DATAMEM_Data_Out;
 localparam ONEBYTE    = 4'b0001,
 			  TWOBYTES   = 4'b0011,
 			  FOURBYTES  = 4'b1111;
+			  
+localparam MEMSIZE = 2**(ADDR_BITWIDTH-2);
 			
 
 //=======================================================
@@ -63,7 +65,7 @@ localparam ONEBYTE    = 4'b0001,
 
 wire [31:0] Shift_Addr; 
 
-reg [31:0] Ram_Array[0:(2**(ADDR_BITWIDTH-2))-1];
+reg [31:0] Ram_Array[0:MEMSIZE-1];
 reg [31:0] Q_temp;
 
 reg [31:0] Readdata;
@@ -78,7 +80,7 @@ begin
 	
 	case(DATAMEM_Byteenable)
 		
-		ONEBYTE: 
+		ONEBYTE: // read 1 byte
 		
 		begin
 			case(DATAMEM_Address[1:0])
@@ -95,7 +97,7 @@ begin
 		
 		end
 		
-		TWOBYTES:
+		TWOBYTES: // read 2 bytes
 		begin
 		
 			case(DATAMEM_Address[1])
@@ -104,7 +106,7 @@ begin
 			endcase
 		end
 		
-		FOURBYTES: Readdata = Q_temp;
+		FOURBYTES: Readdata = Q_temp; // read 4 bytes
 		
 		default: Readdata = Q_temp;
 		
@@ -152,13 +154,14 @@ begin
 				endcase
 			end
 			
-			FOURBYTES:Ram_Array[Shift_Addr] <= DATAMEM_Data_In;
+			FOURBYTES:Ram_Array[Shift_Addr] <= DATAMEM_Data_In;  // store 4 bytes
 					
 			default: Ram_Array[Shift_Addr] <= DATAMEM_Data_In;
 			
 		endcase
 		
 	end
+	
 	
 	Q_temp<=Ram_Array[Shift_Addr];
 
@@ -171,6 +174,26 @@ end
 
 assign DATAMEM_Data_Out = DATAMEM_Re == 1'b1 ? Readdata : 32'd0;
 assign Shift_Addr = DATAMEM_Address>>2;
+
+
+//============================================================
+// INITIALIZING RAM FOR SIMULATION 
+//============================================================
+
+function void init_memory;
+	for(integer i=0; i < MEMSIZE; i=i+1)
+	begin	
+		Ram_Array[i]= 32'h00000000;
+	end
+endfunction
+
+
+initial // simulation begin
+begin
+	$display("Initializig Data Memory...");
+	init_memory();
+	$display("Data Memory successfully loaded.");
+end
 
 
 

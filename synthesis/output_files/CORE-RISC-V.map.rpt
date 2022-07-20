@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CORE-RISC-V
-Tue Jul 19 08:35:00 2022
+Wed Jul 20 17:45:26 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,9 +14,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |DATAMEM
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +45,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jul 19 08:35:00 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jul 20 17:45:26 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; CORE-RISC-V                                 ;
-; Top-level Entity Name           ; WSIGNAL                                     ;
+; Top-level Entity Name           ; DATAMEM                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1                                           ;
-; Total pins                      ; 3                                           ;
+; Total registers                 ; 8224                                        ;
+; Total pins                      ; 81                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA4U23C6       ;                    ;
-; Top-level entity name                                                           ; WSIGNAL            ; CORE-RISC-V        ;
+; Top-level entity name                                                           ; DATAMEM            ; CORE-RISC-V        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -159,13 +161,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.47        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processor 2            ;  22.2%      ;
+;     Processor 3            ;  13.4%      ;
+;     Processor 4            ;  11.4%      ;
 +----------------------------+-------------+
 
 
@@ -174,35 +177,35 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ; Library ;
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
-; ../rtl/WSIGNAL.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v ;         ;
+; ../rtl/DATAMEM.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.v ;         ;
 +----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                           ;
-+---------------------------------------------+-------------------------+
-; Resource                                    ; Usage                   ;
-+---------------------------------------------+-------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1                       ;
-;                                             ;                         ;
-; Combinational ALUT usage for logic          ; 1                       ;
-;     -- 7 input functions                    ; 0                       ;
-;     -- 6 input functions                    ; 0                       ;
-;     -- 5 input functions                    ; 0                       ;
-;     -- 4 input functions                    ; 0                       ;
-;     -- <=3 input functions                  ; 1                       ;
-;                                             ;                         ;
-; Dedicated logic registers                   ; 1                       ;
-;                                             ;                         ;
-; I/O pins                                    ; 3                       ;
-;                                             ;                         ;
-; Total DSP Blocks                            ; 0                       ;
-;                                             ;                         ;
-; Maximum fan-out node                        ; WSIGNAL_RegFile_Write~0 ;
-; Maximum fan-out                             ; 2                       ;
-; Total fan-out                               ; 8                       ;
-; Average fan-out                             ; 1.00                    ;
-+---------------------------------------------+-------------------------+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimate of Logic utilization (ALMs needed) ; 9284              ;
+;                                             ;                   ;
+; Combinational ALUT usage for logic          ; 11523             ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 4769              ;
+;     -- 5 input functions                    ; 2122              ;
+;     -- 4 input functions                    ; 4364              ;
+;     -- <=3 input functions                  ; 268               ;
+;                                             ;                   ;
+; Dedicated logic registers                   ; 8224              ;
+;                                             ;                   ;
+; I/O pins                                    ; 81                ;
+;                                             ;                   ;
+; Total DSP Blocks                            ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; DATAMEM_Clk~input ;
+; Maximum fan-out                             ; 8224              ;
+; Total fan-out                               ; 86333             ;
+; Average fan-out                             ; 4.34              ;
++---------------------------------------------+-------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,7 +213,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |WSIGNAL                   ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 3    ; 0            ; |WSIGNAL            ; WSIGNAL     ; work         ;
+; |DATAMEM                   ; 11523 (11523)       ; 8224 (8224)               ; 0                 ; 0          ; 81   ; 0            ; |DATAMEM            ; DATAMEM     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -220,14 +223,1060 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1     ;
+; Total registers                              ; 8224  ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 2048  ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8192  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[255][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[255][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[255][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[254][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[254][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[254][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[253][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[253][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[253][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[252][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[252][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[252][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[251][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[251][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[251][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[250][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[250][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[250][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[249][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[249][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[249][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[248][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[248][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[248][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[247][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[247][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[247][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[246][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[246][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[246][29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[245][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[245][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[245][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[244][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[244][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[244][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[243][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[243][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[243][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[242][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[242][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[242][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[241][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[241][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[241][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[240][4]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[240][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[240][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[239][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[239][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[239][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[238][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[238][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[238][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[237][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[237][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[237][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[236][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[236][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[236][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[235][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[235][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[235][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[234][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[234][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[234][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[233][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[233][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[233][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[232][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[232][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[232][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[231][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[231][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[231][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[230][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[230][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[230][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[229][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[229][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[229][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[228][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[228][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[228][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[227][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[227][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[227][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[226][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[226][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[226][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[225][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[225][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[225][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[224][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[224][20] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[224][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[223][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[223][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[223][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[222][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[222][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[222][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[221][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[221][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[221][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[220][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[220][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[220][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[219][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[219][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[219][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[218][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[218][20] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[218][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[217][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[217][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[217][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[216][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[216][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[216][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[215][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[215][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[215][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[214][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[214][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[214][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[213][4]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[213][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[213][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[212][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[212][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[212][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[211][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[211][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[211][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[210][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[210][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[210][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[209][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[209][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[209][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[208][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[208][20] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[208][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[207][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[207][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[207][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[206][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[206][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[206][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[205][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[205][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[205][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[204][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[204][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[204][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[203][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[203][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[203][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[202][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[202][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[202][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[201][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[201][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[201][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[200][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[200][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[200][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[199][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[199][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[199][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[198][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[198][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[198][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[197][4]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[197][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[197][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[196][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[196][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[196][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[195][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[195][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[195][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[194][4]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[194][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[194][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[193][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[193][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[193][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[192][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[192][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[192][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[191][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[191][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[191][29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[190][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[190][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[190][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[189][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[189][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[189][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[188][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[188][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[188][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[187][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[187][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[187][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[186][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[186][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[186][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[185][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[185][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[185][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[184][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[184][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[184][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[183][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[183][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[183][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[182][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[182][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[182][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[181][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[181][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[181][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[180][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[180][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[180][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[179][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[179][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[179][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[178][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[178][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[178][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[177][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[177][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[177][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[176][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[176][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[176][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[175][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[175][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[175][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[174][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[174][20] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[174][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[173][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[173][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[173][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[172][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[172][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[172][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[171][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[171][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[171][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[170][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[170][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[170][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[169][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[169][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[169][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[168][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[168][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[168][29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[167][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[167][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[167][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[166][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[166][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[166][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[165][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[165][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[165][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[164][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[164][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[164][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[163][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[163][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[163][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[162][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[162][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[162][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[161][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[161][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[161][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[160][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[160][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[160][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[159][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[159][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[159][29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[158][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[158][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[158][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[157][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[157][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[157][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[156][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[156][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[156][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[155][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[155][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[155][29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[154][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[154][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[154][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[153][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[153][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[153][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[152][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[152][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[152][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[151][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[151][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[151][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[150][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[150][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[150][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[149][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[149][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[149][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[148][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[148][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[148][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[147][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[147][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[147][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[146][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[146][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[146][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[145][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[145][20] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[145][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[144][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[144][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[144][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[143][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[143][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[143][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[142][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[142][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[142][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[141][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[141][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[141][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[140][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[140][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[140][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[139][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[139][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[139][29] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[138][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[138][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[138][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[137][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[137][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[137][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[136][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[136][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[136][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[135][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[135][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[135][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[134][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[134][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[134][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[133][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[133][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[133][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[132][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[132][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[132][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[131][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[131][20] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[131][28] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[130][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[130][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[130][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[129][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[129][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[129][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[128][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[128][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[128][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[127][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[127][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[127][30] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[126][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[126][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[126][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[125][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[125][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[125][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[124][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[124][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[124][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[123][3]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[123][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[123][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[122][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[122][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[122][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[121][6]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[121][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[121][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[120][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[120][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[120][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[119][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[119][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[119][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[118][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[118][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[118][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[117][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[117][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[117][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[116][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[116][18] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[116][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[115][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[115][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[115][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[114][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[114][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[114][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[113][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[113][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[113][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[112][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[112][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[112][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[111][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[111][21] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[111][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[110][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[110][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[110][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[109][1]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[109][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[109][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[108][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[108][22] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[108][26] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[107][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[107][23] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[107][25] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[106][2]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[106][17] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[106][24] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[105][5]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[105][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[105][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[104][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[104][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[104][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[103][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[103][19] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[103][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[102][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[102][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[102][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[101][0]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[101][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[101][27] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[100][7]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[100][16] ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[100][31] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[99][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[99][19]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[99][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[98][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[98][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[98][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[97][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[97][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[97][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[96][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[96][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[96][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[95][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[95][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[95][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[94][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[94][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[94][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[93][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[93][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[93][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[92][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[92][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[92][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[91][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[91][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[91][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[90][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[90][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[90][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[89][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[89][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[89][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[88][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[88][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[88][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[87][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[87][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[87][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[86][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[86][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[86][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[85][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[85][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[85][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[84][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[84][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[84][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[83][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[83][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[83][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[82][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[82][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[82][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[81][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[81][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[81][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[80][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[80][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[80][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[79][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[79][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[79][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[78][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[78][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[78][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[77][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[77][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[77][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[76][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[76][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[76][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[75][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[75][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[75][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[74][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[74][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[74][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[73][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[73][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[73][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[72][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[72][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[72][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[71][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[71][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[71][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[70][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[70][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[70][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[69][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[69][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[69][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[68][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[68][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[68][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[67][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[67][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[67][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[66][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[66][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[66][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[65][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[65][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[65][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[64][1]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[64][21]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[64][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[63][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[63][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[63][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[62][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[62][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[62][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[61][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[61][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[61][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[60][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[60][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[60][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[59][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[59][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[59][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[58][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[58][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[58][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[57][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[57][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[57][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[56][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[56][18]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[56][30]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[55][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[55][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[55][29]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[54][6]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[54][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[54][26]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[53][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[53][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[53][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[52][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[52][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[52][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[51][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[51][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[51][29]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[50][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[50][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[50][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[49][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[49][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[49][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[48][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[48][18]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[48][26]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[47][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[47][18]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[47][26]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[46][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[46][21]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[46][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[45][6]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[45][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[45][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[44][1]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[44][18]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[44][28]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[43][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[43][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[43][28]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[42][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[42][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[42][30]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[41][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[41][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[41][25]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[40][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[40][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[40][25]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[39][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[39][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[39][25]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[38][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[38][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[38][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[37][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[37][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[37][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[36][6]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[36][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[36][28]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[35][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[35][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[35][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[34][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[34][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[34][30]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[33][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[33][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[33][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[32][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[32][19]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[32][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[31][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[31][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[31][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[30][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[30][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[30][30]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[29][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[29][20]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[29][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[28][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[28][19]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[28][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[27][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[27][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[27][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[26][1]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[26][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[26][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[25][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[25][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[25][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[24][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[24][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[24][30]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[23][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[23][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[23][31]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[22][1]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[22][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[22][28]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[21][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[21][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[21][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[20][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[20][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[20][30]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[19][4]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[19][22]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[19][26]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[18][2]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[18][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[18][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[17][1]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[17][18]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[17][25]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[16][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[16][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[16][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[15][6]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[15][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[15][25]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[14][3]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[14][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[14][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[13][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[13][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[13][24]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[12][5]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[12][16]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[12][29]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[11][0]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[11][17]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[11][27]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[10][7]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[10][23]  ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[10][29]  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[9][0]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[9][16]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[9][30]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[8][0]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[8][21]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[8][24]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[7][5]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[7][23]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[7][31]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[6][6]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[6][21]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[6][30]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[5][0]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[5][17]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[5][27]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[4][1]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[4][16]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[4][26]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[3][7]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[3][20]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[3][24]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[2][7]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[2][16]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[2][28]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[1][7]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[1][20]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[1][26]   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |DATAMEM|Ram_Array[0][3]    ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[0][23]   ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 16 LEs               ; 96 LEs                 ; Yes        ; |DATAMEM|Ram_Array[0][24]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[255][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[254][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[253][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[252][10] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[251][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[250][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[249][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[248][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[247][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[246][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[245][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[244][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[243][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[242][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[241][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[240][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[239][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[238][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[237][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[236][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[235][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[234][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[233][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[232][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[231][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[230][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[229][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[228][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[227][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[226][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[225][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[224][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[223][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[222][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[221][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[220][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[219][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[218][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[217][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[216][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[215][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[214][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[213][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[212][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[211][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[210][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[209][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[208][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[207][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[206][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[205][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[204][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[203][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[202][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[201][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[200][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[199][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[198][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[197][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[196][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[195][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[194][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[193][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[192][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[191][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[190][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[189][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[188][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[187][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[186][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[185][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[184][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[183][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[182][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[181][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[180][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[179][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[178][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[177][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[176][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[175][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[174][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[173][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[172][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[171][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[170][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[169][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[168][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[167][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[166][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[165][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[164][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[163][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[162][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[161][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[160][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[159][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[158][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[157][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[156][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[155][10] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[154][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[153][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[152][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[151][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[150][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[149][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[148][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[147][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[146][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[145][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[144][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[143][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[142][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[141][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[140][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[139][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[138][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[137][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[136][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[135][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[134][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[133][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[132][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[131][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[130][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[129][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[128][14] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[127][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[126][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[125][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[124][10] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[123][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[122][13] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[121][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[120][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[119][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[118][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[117][10] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[116][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[115][10] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[114][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[113][10] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[112][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[111][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[110][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[109][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[108][9]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[107][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[106][11] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[105][12] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[104][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[103][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[102][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[101][15] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[100][8]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[99][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[98][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[97][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[96][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[95][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[94][11]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[93][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[92][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[91][10]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[90][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[89][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[88][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[87][12]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[86][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[85][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[84][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[83][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[82][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[81][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[80][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[79][12]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[78][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[77][12]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[76][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[75][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[74][10]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[73][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[72][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[71][11]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[70][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[69][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[68][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[67][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[66][14]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[65][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[64][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[63][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[62][12]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[61][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[60][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[59][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[58][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[57][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[56][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[55][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[54][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[53][14]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[52][11]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[51][12]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[50][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[49][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[48][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[47][10]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[46][14]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[45][14]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[44][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[43][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[42][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[41][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[40][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[39][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[38][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[37][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[36][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[35][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[34][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[33][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[32][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[31][12]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[30][14]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[29][11]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[28][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[27][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[26][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[25][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[24][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[23][10]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[22][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[21][9]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[20][10]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[19][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[18][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[17][10]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[16][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[15][13]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[14][8]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[13][14]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[12][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[11][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[10][15]  ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[9][15]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[8][15]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[7][8]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[6][8]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[5][9]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[4][8]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[3][14]   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[2][8]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[1][8]    ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |DATAMEM|Ram_Array[0][15]   ;
+; 256:1              ; 31 bits   ; 5270 LEs      ; 5270 LEs             ; 0 LEs                  ; No         ; |DATAMEM|Mux16407           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |DATAMEM|DATAMEM_Data_Out   ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 16 LEs               ; 80 LEs                 ; No         ; |DATAMEM|DATAMEM_Data_Out   ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 24 LEs               ; 88 LEs                 ; No         ; |DATAMEM|DATAMEM_Data_Out   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |DATAMEM ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; ADDR_BITWIDTH  ; 10    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -235,15 +1284,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1                           ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         2 data inputs ; 1                           ;
-; boundary_port         ; 3                           ;
+; arriav_ff             ; 8224                        ;
+;     ENA               ; 6144                        ;
+;     ENA SLD           ; 2048                        ;
+;     plain             ; 32                          ;
+; arriav_lcell_comb     ; 11523                       ;
+;     normal            ; 11523                       ;
+;         3 data inputs ; 268                         ;
+;         4 data inputs ; 4364                        ;
+;         5 data inputs ; 2122                        ;
+;         6 data inputs ; 4769                        ;
+; boundary_port         ; 81                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.75                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 4.35                        ;
 +-----------------------+-----------------------------+
 
 
@@ -252,7 +1306,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:26     ;
 +----------------+--------------+
 
 
@@ -262,9 +1316,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Jul 19 08:34:52 2022
+    Info: Processing started: Wed Jul 20 17:44:25 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CORE-RISC-V -c CORE-RISC-V
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.v
+    Info (12023): Found entity 1: DATAMEM File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v
     Info (12023): Found entity 1: LSU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
@@ -303,20 +1359,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/k
     Info (12023): Found entity 1: ENPC File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ENPC.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v
     Info (12023): Found entity 1: WSIGNAL File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/WSIGNAL_tb.v
-    Info (12023): Found entity 1: WSIGNAL_tb File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/WSIGNAL_tb.v Line: 22
-Info (12127): Elaborating entity "WSIGNAL" for the top level hierarchy
+Info (12127): Elaborating entity "DATAMEM" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 2 logic cells
+Info (21057): Implemented 15732 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 49 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 15651 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 490 megabytes
-    Info: Processing ended: Tue Jul 19 08:35:00 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 1535 megabytes
+    Info: Processing ended: Wed Jul 20 17:45:26 2022
+    Info: Elapsed time: 00:01:01
+    Info: Total CPU time (on all processors): 00:01:26
 
 

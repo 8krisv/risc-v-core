@@ -1,3 +1,3 @@
-*.v.bak
-/.vscode
+*.bak
+**/.vscode
 *.out
