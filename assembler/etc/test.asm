@@ -78,3 +78,8 @@ jalr x1 4(x2)
 
 lui x0 0x00007000
 auipc x0 0x00007000
+
+#-- stop --#
+$stop
+
+

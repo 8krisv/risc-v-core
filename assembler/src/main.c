@@ -37,7 +37,7 @@ static char _bufferror[MAXSIZEERROR]; /*buffer for error message*/
 
 
 enum LEXEME_TYPE {LX_OP,LX_REG,LX_IMMEDIATE,LX_OFFSET,LX_LABEL_ASS,LX_LABEL_USE,LX_LABEL_UKNOWN};
-enum OP_TYPE {R_TYPE, I_TYPE, S_TYPE, B_TYPE, U_TYPE, J_TYPE};
+enum OP_TYPE {R_TYPE, I_TYPE, S_TYPE, B_TYPE, U_TYPE, J_TYPE, STOP};
 
 
 char get_funct7_r_type(char* opname){
@@ -69,6 +69,9 @@ char get_type_instruction(char opcode){
     else if (opcode==0x6f)
     {
         return J_TYPE;
+    }
+    else if(opcode==0x0f){
+        return STOP;
     }
     else{
         return U_TYPE;
@@ -186,8 +189,9 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
         /*first token of the new line*/
         if (i==0){
 
+
             node = search_node(ops_bst,token);
-            
+                        
             /*token is a function*/
             if (node!=NULL){
                 append(&row,token,LX_OP,((op_data_struct*)node->data)->index,*text_line);
@@ -370,7 +374,7 @@ void print_list(list* head){
         case 5:
         printf("Type:%s\n","LX_LABEL_USS");
         break;
-  
+
         default:
         printf("Type:%s\n","LX_LABEL_UKNOWN");
         break;
@@ -406,7 +410,7 @@ void error(char** stderr_buff){
 
 
 
-void get_op_format(char opcode,char* format){
+void get_op_format(int opcode,char* format){
 
     switch (opcode)
     {
@@ -471,6 +475,13 @@ void get_op_format(char opcode,char* format){
     case 0x37: //0110111 lui
         format[0]=LX_REG;
         format[1]=LX_IMMEDIATE;
+        format[2]='\0';
+        format[3]='\0';
+        break;
+
+    case 0x0f: //  $stop
+        format[0]='\0';
+        format[1]='\0';
         format[2]='\0';
         format[3]='\0';
         break;
@@ -545,6 +556,7 @@ list** syntax_analysis(list** sym_table,bst* label_bst,char** stderr_buff,int* c
                     stderr_buff[nerror]=strdup(_bufferror);
                     nerror++;
                 }
+
             }
             
         }
@@ -602,17 +614,18 @@ int get_compiled_instruction(list* head){
         
         else if (head->lexeme[0]=='s'){
 
+         
+            instruction_i.istruct.rs1=head->next->next->value;
+
             //srai
             if (head->lexeme[2]=='a'){
-                
-                instruction_i.istruct.rs1=head->next->next->value;
-                instruction_i.istruct.immediate_11_0=head->next->next->next->value&0x0000041f;
+                instruction_i.istruct.immediate_11_0=(head->next->next->next->value&0x0000001f)+ 0x00000400;
             }
             else{
-                instruction_i.istruct.rs1=head->next->next->value;
                 instruction_i.istruct.immediate_11_0=head->next->next->next->value&0x0000001f;
             }
         }
+
         else{
 
             instruction_i.istruct.rs1=head->next->next->value;    
@@ -662,8 +675,8 @@ int get_compiled_instruction(list* head){
 
         return instruction_u.instruction;
     }
-    //J_TYPE
-    else{
+   
+    else if (type==J_TYPE){
         union j_type instruction_j;
      
         instruction_j.jstruct.opcode=OP_OPCODES[head->value];
@@ -675,6 +688,20 @@ int get_compiled_instruction(list* head){
         
         return instruction_j.instruction;
 
+    }
+
+    //STOP
+    else{
+        
+        union i_type instruction_i;
+
+        instruction_i.istruct.opcode = 0x13;
+        instruction_i.istruct.rd =  31;
+        instruction_i.istruct.funct3 = 0x00;
+        instruction_i.istruct.rs1=0;    
+        instruction_i.istruct.immediate_11_0=-1;
+
+        return instruction_i.instruction;
     }
 }
 

@@ -32,13 +32,17 @@ output [31:0] IMM_GEN_Inmediate_OutBUS
 //============================================================
 
 parameter I_TYPE_0 = 7'b00?0011; /*This case does not cover the 
-											operations fence,fence.i,ecall,
+											operations jalr,fence,fence.i,ecall,
 											ebreak and the csr instructions*/
-			 
+											
+										
+parameter JALR_TYPE	= 7'b1100111;  /*specific case for jalr instruction*/
 parameter S_TYPE   = 7'b0100011;
 parameter B_TYPE   = 7'b1100011;
 parameter U_TYPE   = 7'b0?10111;
 parameter J_TYPE   = 7'b1101111;
+
+
 
 localparam SLTIU = 3'b011; /*SLTIU operaion*/
 			 
@@ -86,6 +90,10 @@ begin
 								  IMM_GEN_ins_InBUS[20],        // 1
 								  IMM_GEN_ins_InBUS[30:21],     // 10
 								  1'b0};   //shift left by 1  
+								  
+								  
+		JALR_TYPE: Tmp_Imm = {{21{IMM_GEN_ins_InBUS[31]}}, // 21
+									 IMM_GEN_ins_InBUS[30:20]};   // 11
 		
 		default: Tmp_Imm= 32'h00000000;
 	

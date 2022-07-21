@@ -4,327 +4,679 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "DATAMEM_Data_Out[0]",
+					"name" : "CORE_Insmem_Read",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[1]",
+					"name" : "Core_Insmem_Addr_OutBUS[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[2]",
+					"name" : "Core_Insmem_Addr_OutBUS[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[3]",
+					"name" : "Core_Insmem_Addr_OutBUS[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[4]",
+					"name" : "Core_Insmem_Addr_OutBUS[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[5]",
+					"name" : "Core_Insmem_Addr_OutBUS[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[6]",
+					"name" : "Core_Insmem_Addr_OutBUS[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[7]",
+					"name" : "Core_Insmem_Addr_OutBUS[6]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[8]",
+					"name" : "Core_Insmem_Addr_OutBUS[7]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[9]",
+					"name" : "Core_Insmem_Addr_OutBUS[8]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[10]",
+					"name" : "Core_Insmem_Addr_OutBUS[9]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[11]",
+					"name" : "Core_Insmem_Addr_OutBUS[10]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[12]",
+					"name" : "Core_Insmem_Addr_OutBUS[11]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[13]",
+					"name" : "Core_Insmem_Addr_OutBUS[12]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[14]",
+					"name" : "Core_Insmem_Addr_OutBUS[13]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[15]",
+					"name" : "Core_Insmem_Addr_OutBUS[14]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[16]",
+					"name" : "Core_Insmem_Addr_OutBUS[15]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[17]",
+					"name" : "Core_Insmem_Addr_OutBUS[16]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[18]",
+					"name" : "Core_Insmem_Addr_OutBUS[17]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[19]",
+					"name" : "Core_Insmem_Addr_OutBUS[18]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[20]",
+					"name" : "Core_Insmem_Addr_OutBUS[19]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[21]",
+					"name" : "Core_Insmem_Addr_OutBUS[20]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[22]",
+					"name" : "Core_Insmem_Addr_OutBUS[21]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[23]",
+					"name" : "Core_Insmem_Addr_OutBUS[22]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[24]",
+					"name" : "Core_Insmem_Addr_OutBUS[23]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[25]",
+					"name" : "Core_Insmem_Addr_OutBUS[24]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[26]",
+					"name" : "Core_Insmem_Addr_OutBUS[25]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[27]",
+					"name" : "Core_Insmem_Addr_OutBUS[26]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[28]",
+					"name" : "Core_Insmem_Addr_OutBUS[27]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[29]",
+					"name" : "Core_Insmem_Addr_OutBUS[28]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[30]",
+					"name" : "Core_Insmem_Addr_OutBUS[29]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_Out[31]",
+					"name" : "Core_Insmem_Addr_OutBUS[30]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Re",
+					"name" : "Core_Insmem_Addr_OutBUS[31]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Byteenable[1]",
+					"name" : "CORE_Datamem_Read",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[0]",
+					"name" : "CORE_Datamem_Write",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[1]",
+					"name" : "CORE_Datamem_Byteenable_OutBUS[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Byteenable[3]",
+					"name" : "CORE_Datamem_Byteenable_OutBUS[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Byteenable[0]",
+					"name" : "CORE_Datamem_Byteenable_OutBUS[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Byteenable[2]",
+					"name" : "CORE_Datamem_Byteenable_OutBUS[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[4]",
+					"name" : "CORE_Datamem_Writedata_outBUS[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[5]",
+					"name" : "CORE_Datamem_Writedata_outBUS[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[2]",
+					"name" : "CORE_Datamem_Writedata_outBUS[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[3]",
+					"name" : "CORE_Datamem_Writedata_outBUS[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[8]",
+					"name" : "CORE_Datamem_Writedata_outBUS[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[9]",
+					"name" : "CORE_Datamem_Writedata_outBUS[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[6]",
+					"name" : "CORE_Datamem_Writedata_outBUS[6]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Address[7]",
+					"name" : "CORE_Datamem_Writedata_outBUS[7]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Clk",
+					"name" : "CORE_Datamem_Writedata_outBUS[8]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[8]",
+					"name" : "CORE_Datamem_Writedata_outBUS[9]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[0]",
+					"name" : "CORE_Datamem_Writedata_outBUS[10]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_We",
+					"name" : "CORE_Datamem_Writedata_outBUS[11]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[24]",
+					"name" : "CORE_Datamem_Writedata_outBUS[12]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[16]",
+					"name" : "CORE_Datamem_Writedata_outBUS[13]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[9]",
+					"name" : "CORE_Datamem_Writedata_outBUS[14]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[1]",
+					"name" : "CORE_Datamem_Writedata_outBUS[15]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[25]",
+					"name" : "CORE_Datamem_Writedata_outBUS[16]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[17]",
+					"name" : "CORE_Datamem_Writedata_outBUS[17]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[10]",
+					"name" : "CORE_Datamem_Writedata_outBUS[18]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[2]",
+					"name" : "CORE_Datamem_Writedata_outBUS[19]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[26]",
+					"name" : "CORE_Datamem_Writedata_outBUS[20]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[18]",
+					"name" : "CORE_Datamem_Writedata_outBUS[21]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[11]",
+					"name" : "CORE_Datamem_Writedata_outBUS[22]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[3]",
+					"name" : "CORE_Datamem_Writedata_outBUS[23]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[27]",
+					"name" : "CORE_Datamem_Writedata_outBUS[24]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[19]",
+					"name" : "CORE_Datamem_Writedata_outBUS[25]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[12]",
+					"name" : "CORE_Datamem_Writedata_outBUS[26]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[4]",
+					"name" : "CORE_Datamem_Writedata_outBUS[27]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[28]",
+					"name" : "CORE_Datamem_Writedata_outBUS[28]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[20]",
+					"name" : "CORE_Datamem_Writedata_outBUS[29]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[13]",
+					"name" : "CORE_Datamem_Writedata_outBUS[30]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[5]",
+					"name" : "CORE_Datamem_Writedata_outBUS[31]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[29]",
+					"name" : "CORE_Datamem_Addr_OutBUS[0]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[21]",
+					"name" : "CORE_Datamem_Addr_OutBUS[1]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[14]",
+					"name" : "CORE_Datamem_Addr_OutBUS[2]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[6]",
+					"name" : "CORE_Datamem_Addr_OutBUS[3]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[30]",
+					"name" : "CORE_Datamem_Addr_OutBUS[4]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[22]",
+					"name" : "CORE_Datamem_Addr_OutBUS[5]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[15]",
+					"name" : "CORE_Datamem_Addr_OutBUS[6]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[7]",
+					"name" : "CORE_Datamem_Addr_OutBUS[7]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[31]",
+					"name" : "CORE_Datamem_Addr_OutBUS[8]",
 					"strict" : false
 				},
 				{
-					"name" : "DATAMEM_Data_In[23]",
+					"name" : "CORE_Datamem_Addr_OutBUS[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[10]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[11]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[12]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[13]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[14]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[15]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[16]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[17]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[18]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[19]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[20]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[21]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[22]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[23]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[24]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[25]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[26]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[27]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[28]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[29]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[30]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Addr_OutBUS[31]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Clk_in",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Reset_in",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[13]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[12]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[24]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[23]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[22]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[20]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[21]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[3]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[4]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[5]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[8]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[10]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[11]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[12]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[13]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[14]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[15]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[16]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[17]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[18]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[19]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[20]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[21]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[22]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[23]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[24]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[25]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[26]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[27]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[28]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[29]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[30]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Datamem_Readdata_InBUS[31]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[14]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[7]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[19]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[18]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[17]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[15]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[16]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[31]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[30]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[29]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[28]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[9]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[8]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[25]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[11]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[10]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[27]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[26]",
 					"strict" : false
 				}
 			]

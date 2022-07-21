@@ -1,6 +1,6 @@
 /*#########################################################################
 //# General purpose register triggered on the negative edge of the clock
-//# and asynchronous active low reset 
+//# and asynchronous reset 
 //#########################################################################
 //#
 //# Copyright (C) 2021 Jose Maria Jaramillo Hoyos

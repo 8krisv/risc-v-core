@@ -39,7 +39,7 @@
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA4U23C6
-set_global_assignment -name TOP_LEVEL_ENTITY DATAMEM
+set_global_assignment -name TOP_LEVEL_ENTITY CORE
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:27:31  JULY 02, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"

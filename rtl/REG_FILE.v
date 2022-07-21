@@ -279,13 +279,15 @@ MUX_32_1 #(.INPUT_DATA_WIDTH(DATAWIDTH)) Mux_Output_R2 (
 
 
 
-/*Register #1 instantiation*/
+/*Register #1 instantiation, Reg0 is hardwired to
+0x00000000 according to RISC-V Calling Convention*/
+
 REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg0(
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
 .REG_Reset(REG_FILE_Reset_in),
 .REG_Set(Reg0_Set),
-.REG_Data_InBUS(REG_FILE_Data_InBUS),
+.REG_Data_InBUS(32'h00000000),
 //////////// OUTPUTS ////////////////////// OUTPUT //////////
 .REG_Data_OutBUS(Reg0_Output)
 
