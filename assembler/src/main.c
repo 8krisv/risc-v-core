@@ -22,13 +22,14 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
+#include <unistd.h> 
 #include "../include/bst.h"
 #include "../include/utils.h"
 #include "../include/list.h"
 #include "../include/struct.h"
 
 
-#define DEFSIZESYMTABLE 256
+#define DEFSIZESYMTABLE 512
 #define NUMERRORMSG 32
 #define MAXSIZEERROR 128
 
@@ -705,29 +706,109 @@ int get_compiled_instruction(list* head){
     }
 }
 
-void compile(list** sym_table, int size){
+void compile(list** sym_table, int size, char* output_name, int show_mem_flag){
 
+    char buffname[50];
+    
     int* compile_instructions = malloc(sizeof(int)*size);
 
-    for (int i = 0, j=0; sym_table[i]!=NULL; i++){
+    int j=0;
+
+    for (int i = 0; sym_table[i]!=NULL; i++){
                
         if (sym_table[i]->type==LX_LABEL_ASS){
             continue;
         }
-        
         compile_instructions[j]=get_compiled_instruction(sym_table[i]);
-
         j++;
     }
 
+
     FILE *bin;
-    bin = fopen("test.bin","wb");
+     
+    sprintf(buffname,"%s.bin",output_name);
+
+    bin = fopen(buffname,"wb");
     fwrite(compile_instructions,sizeof(int),size,bin);
     fclose(bin);
+
+    if (show_mem_flag){
+
+        FILE *text;
+        int opcode;
+        sprintf(buffname,"%s_mem.txt",output_name);
+        text = fopen(buffname,"w");
+
+        j=0;
+
+        for (int i = 0; sym_table[i]!=NULL; i++){
+            
+            if (sym_table[i]->type==LX_LABEL_ASS){
+                continue;
+            }
+
+            opcode=OP_OPCODES[sym_table[i]->value];
+
+            if (opcode==0x03 || opcode==0x23 || opcode==0x67){
+                fprintf(text,"0x%08x:\t%08x\t: %s %s %d(%s)\n",j*4,compile_instructions[j],sym_table[i]->lexeme,sym_table[i]->next->lexeme,sym_table[i]->next->next->value,sym_table[i]->next->next->next->lexeme);
+            }
+
+            else if (opcode == 0x63){
+                
+                fprintf(text,"0x%08x:\t%08x\t: %s %s %s 0x%08x\n",j*4,compile_instructions[j],sym_table[i]->lexeme,sym_table[i]->next->lexeme,sym_table[i]->next->next->lexeme,sym_table[i]->next->next->next->value*4 + j*4);
+            }
+
+            else if(opcode==0x6f){
+               fprintf(text,"0x%08x:\t%08x\t: %s %s 0x%08x\n",j*4, compile_instructions[j] ,sym_table[i]->lexeme,sym_table[i]->next->lexeme,sym_table[i]->next->next->value*4 + j*4);
+            }
+
+            else if(opcode==0x0f){
+                fprintf(text,"0x%08x:\t%08x\t: %s ",j*4, compile_instructions[j] ,sym_table[i]->lexeme);
+            }
+
+            else{
+                fprintf(text,"0x%08x:\t%08x\t: %s %s %s %s\n",j*4,compile_instructions[j],sym_table[i]->lexeme,sym_table[i]->next->lexeme,sym_table[i]->next->next->lexeme,sym_table[i]->next->next->next->lexeme);
+            }
+           
+            j++;
+        }
+        
+        fclose(text);
+    }
+    
 }
 
 
-int main(int argc, char const *argv[]){
+void parse_arguments(char** name, int* showmem, int argc , char** argv){
+
+    int option;
+    
+    *name=strtok(argv[1],".");
+
+    while ((option = getopt(argc, argv, "o:m")) != -1) {
+        
+        switch ((option)){
+
+            case 'o':
+                
+                if (optarg){
+                    *name= optarg;
+                }
+              
+                break;
+
+            case 'm':
+                *showmem=1;
+                break;
+
+            default:
+                break;
+        }
+    }
+}
+
+
+int main(int argc, char** argv){
 
     bst* ops_bst = NULL;
     bst* regs_bst  = NULL;
@@ -736,6 +817,9 @@ int main(int argc, char const *argv[]){
     int ninstr=0;
 
     FILE* fp;
+
+    char* bin_name;
+    int show_mem_flag=0;
 
     if (argc < 2){
         fprintf(stderr,"Please provide a source code!\n");
@@ -750,6 +834,9 @@ int main(int argc, char const *argv[]){
         perror("Error");
         exit(EXIT_FAILURE);
     }
+
+    /*parsing arguments*/
+    parse_arguments(&bin_name,&show_mem_flag,argc,argv);
 
     /*loading op lexemes and regs name in a binary search tree for time complexity  O(logn) in searches*/
     ops_bst=load_ops_bst();
@@ -766,10 +853,10 @@ int main(int argc, char const *argv[]){
     /*there was one or more errors in the sintax analysis stage*/
     error(stderr_buff);
 
-    
 
     /*compilation stage*/
-    compile(sym_table,ninstr);
+    compile(sym_table,ninstr,bin_name,show_mem_flag);
+
 
     printf("Successful compilation!\n");
 
