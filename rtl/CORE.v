@@ -88,8 +88,6 @@ wire [6:0] Opcode_InBUS_Wire;
 wire [6:0] Funct7_InBUS_Wire;
 wire [2:0] Funct3_InBUS_Wire;
 
-
-
 wire Idu_Not_Branch_Jump_Op_Wire;
 wire [1:0] Idu_RegFile_Mux_OutBUS_Wire;
 wire Idu_RegFile_Write_Wire;
@@ -131,10 +129,6 @@ wire Mcu_Ir_Reset_Wire;
 wire Mcu_Ir_Set_Wire;
 wire Mcu_RegFile_Reset_Wire;
 
-wire Enpc_Set_En;
-
-wire Wsignal_RegFile_Write;
-
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -168,21 +162,6 @@ REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Pc (
 .REG_Data_OutBUS(Pc_Addr_OutBUS_Wire)
 
 );
-
-
-
-/* Program counter set enable signal generation*/
-ENPC Enpc(
-
-//////////// INPUTS //////////
-.ENPC_Clk(CORE_Clk_In),
-.ENPC_En(Mcu_Enpc_set_Wire),
-.ENPC_Reset(Mcu_Enpc_reset_Wire),
-//////////// OUTPUTS //////////,
-.ENPC_Set_En(Enpc_Set_En)
-
-);
-
 
 
 ADDER #(.DATAWIDTH(DATAWIDTH)) Add0 (
@@ -250,18 +229,6 @@ REG_FILE Register_File(
  /////// Output ///////
 .REG_FILE_Data1_OutBUS(Register_File_Data1_OutBUS_Wire),
 .REG_FILE_Data2_OutBUS(Register_File_Data2_OutBUS_Wire)
-
-);
-
-
-
-WSIGNAL Wsignal(
-
-///// inputs /////
-.WSIGNAL_Clk(CORE_Clk_In),
-.WSIGNAL_En(Idu_RegFile_Write_Wire),
-///// outputs /////
-.WSIGNAL_RegFile_Write(Wsignal_RegFile_Write)
 
 );
 
@@ -448,11 +415,6 @@ assign Rd_InBUS_Wire = Iregister_OutBUS_Wire[11:7];
 assign Opcode_InBUS_Wire = Iregister_OutBUS_Wire[6:0];
 assign Funct7_InBUS_Wire = Iregister_OutBUS_Wire[31:25];
 assign Funct3_InBUS_Wire = Iregister_OutBUS_Wire[14:12];
-
-
-
-
-
 
 
 endmodule

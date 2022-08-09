@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Aug  9 09:41:49 2022
+Analysis & Synthesis Status : Successful - Tue Aug  9 10:43:26 2022
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : CORE-RISC-V
-Top-level Entity Name : AXI_RAM
+Top-level Entity Name : CORE
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 16448
-Total pins : 79
+Total registers : 1062
+Total pins : 172
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

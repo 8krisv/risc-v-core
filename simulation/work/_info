@@ -154,23 +154,23 @@ R6
 R7
 n@b@r@u
 vCORE
-R0
+!s110 1660059776
 !i10b 1
-!s100 T]6S`oJ2?Oafz_A;PZo5n2
+!s100 WN]XSiT0`7LdD=]N?dl;C2
 R1
-IB1noe`c>J[Wh1Eh@9EAf12
+IcY?KK9`2zjl0;JdC=89><3
 R2
 R3
-w1659721488
+w1660059688
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v
-!i122 92
-L0 22 437
+!i122 113
+L0 22 399
 R4
 r1
 !s85 0
 31
-R5
+!s108 1660059776.000000
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v|
 !i113 1

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 *.do linguist-detectable=false
+=======
+*Stata linguist-detectable=false
+>>>>>>> b298e6c4c0c7ad405ca89129ae2ec0ab9466f625

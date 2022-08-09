@@ -221,3 +221,4 @@ run -all
 # ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
 #    Time: 400 ns  Iteration: 1  Instance: /CORE_tb
 # Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
+# Compile of CORE.v was successful.
