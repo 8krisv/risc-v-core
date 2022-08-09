@@ -32,7 +32,10 @@ DATAMEM_Address,
 DATAMEM_Data_In,
 
 //////////// OUTPUT //////////
-DATAMEM_Data_Out
+DATAMEM_Data_Out,
+DATAMEM_Read_Valid,
+DATAMEM_Write_Ready
+
 );
 
 //============================================================
@@ -45,7 +48,9 @@ input DATAMEM_Re;
 input [ADDR_BITWIDTH-1:0] DATAMEM_Address;
 input [31:0] DATAMEM_Data_In;
 input [3:0] DATAMEM_Byteenable;
-output [31:0] DATAMEM_Data_Out;
+output reg [31:0] DATAMEM_Data_Out;
+output DATAMEM_Read_Valid;
+output DATAMEM_Write_Ready;
 
 //============================================================
 //  PARAMETER DECLARATIONS
@@ -64,18 +69,33 @@ localparam MEMSIZE = 2**(ADDR_BITWIDTH-2);
 //=======================================================
 
 wire [31:0] Shift_Addr; 
-
 reg [31:0] Ram_Array[0:MEMSIZE-1];
-reg [31:0] Q_temp;
-
 reg [31:0] Readdata;
+reg read_valid = 1'b0;
+reg write_ready = 1'b0;
 
 
 //============================================================
 // COMBINATIONAL LOGIC
 //============================================================
+always@(DATAMEM_Re,DATAMEM_We)
+begin
+	
+	if(DATAMEM_Re)
+		read_valid=1'b1;
+	else
+		read_valid=1'b0;
+		
+	
+	if(DATAMEM_We)
+		write_ready=1'b1;
+	else
+		write_ready=1'b0;
 
-always@(DATAMEM_Byteenable,DATAMEM_Address,Q_temp)
+end
+
+
+always@(DATAMEM_Byteenable,DATAMEM_Address,Ram_Array[Shift_Addr])
 begin
 	
 	case(DATAMEM_Byteenable)
@@ -85,13 +105,13 @@ begin
 		begin
 			case(DATAMEM_Address[1:0])
 					
-			2'b00: Readdata = {{24{1'b0}},Q_temp[7:0]};
+			2'b00: Readdata = {{24{1'b0}},Ram_Array[Shift_Addr][7:0]};
 				
-			2'b01: Readdata = {{24{1'b0}},Q_temp[15:8]};
+			2'b01: Readdata = {{24{1'b0}},Ram_Array[Shift_Addr][15:8]};
 				
-			2'b10: Readdata = {{24{1'b0}},Q_temp[23:16]};
+			2'b10: Readdata = {{24{1'b0}},Ram_Array[Shift_Addr][23:16]};
 				
-			2'b11: Readdata = {{24{1'b0}},Q_temp[31:24]};
+			2'b11: Readdata = {{24{1'b0}},Ram_Array[Shift_Addr][31:24]};
 				
 			endcase
 		
@@ -101,14 +121,14 @@ begin
 		begin
 		
 			case(DATAMEM_Address[1])
-				1'b0: Readdata = {{16{1'b0}},Q_temp[15:0]};	
-				1'b1: Readdata = {{16{1'b0}},Q_temp[31:16]};
+				1'b0: Readdata = {{16{1'b0}},Ram_Array[Shift_Addr][15:0]};	
+				1'b1: Readdata = {{16{1'b0}},Ram_Array[Shift_Addr][31:16]};
 			endcase
 		end
 		
-		FOURBYTES: Readdata = Q_temp; // read 4 bytes
+		FOURBYTES: Readdata = Ram_Array[Shift_Addr]; // read 4 bytes
 		
-		default: Readdata = Q_temp;
+		default: Readdata = Ram_Array[Shift_Addr];
 		
 	endcase
 
@@ -121,7 +141,7 @@ end
 always@(posedge DATAMEM_Clk)
 begin
 	
-	if(DATAMEM_We) 
+	if(DATAMEM_We&write_ready) 
 	
 	begin
 	
@@ -162,19 +182,23 @@ begin
 		
 	end
 	
-	
-	Q_temp<=Ram_Array[Shift_Addr];
+	if(DATAMEM_Re&read_valid)
+		DATAMEM_Data_Out<=Readdata;
+		
+	else
+		DATAMEM_Data_Out<=32'b0;
+		
 
 end
 
 
 //============================================================
-// COMBINATIONAL OUTPUT LOGIC
+// COMBINATIONAL LOGIC
 //============================================================
 
-assign DATAMEM_Data_Out = DATAMEM_Re == 1'b1 ? Readdata : 32'd0;
 assign Shift_Addr = DATAMEM_Address>>2;
-
+assign DATAMEM_Read_Valid=read_valid;
+assign DATAMEM_Write_Ready=write_ready;
 
 //============================================================
 // INITIALIZING RAM FOR SIMULATION 

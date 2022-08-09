@@ -282,7 +282,7 @@ MUX_32_1 #(.INPUT_DATA_WIDTH(DATAWIDTH)) Mux_Output_R2 (
 /*Register #1 instantiation, Reg0 is hardwired to
 0x00000000 according to RISC-V Calling Convention*/
 
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg0(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg0(
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
 .REG_Reset(REG_FILE_Reset_in),
@@ -295,7 +295,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg0(
 
 
 /*Register #2 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg1(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg1(
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
 .REG_Reset(REG_FILE_Reset_in),
@@ -308,7 +308,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg1(
 
 
 /*Register #3 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg2(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg2(
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
 .REG_Reset(REG_FILE_Reset_in),
@@ -320,7 +320,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg2(
 );
 
 /*Register #4 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg3(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg3(
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
 .REG_Reset(REG_FILE_Reset_in),
@@ -333,7 +333,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg3(
 
 
 /*Register #5 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg4(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg4(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -346,7 +346,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg4(
 );
 
 /*Register #6 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg5(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg5(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -360,7 +360,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg5(
 
 
 /*Register #7 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg6(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg6(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -373,7 +373,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg6(
 );
 
 /*Register #8 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg7(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg7(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -387,7 +387,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg7(
 
 
 /*Register #9 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg8(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg8(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -401,7 +401,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg8(
 
 
 /*Register #10 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg9(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg9(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -414,7 +414,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg9(
 );
 
 /*Register #11 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg10(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg10(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -427,7 +427,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg10(
 );
 
 /*Register #12 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg11(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg11(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -440,7 +440,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg11(
 );
 
 /*Register #13 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg12(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg12(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -453,7 +453,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg12(
 );
 
 /*Register #14 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg13(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg13(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -466,7 +466,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg13(
 );
 
 /*Register #15 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg14(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg14(
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
 .REG_Reset(REG_FILE_Reset_in),
@@ -479,7 +479,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg14(
 
 
 /*Register #16 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg15(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg15(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -493,7 +493,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg15(
 
 
 /*Register #17 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg16(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg16(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -506,7 +506,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg16(
 );
 
 /*Register #18 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg17(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg17(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -519,7 +519,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg17(
 );
 
 /*Register #19 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg18(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg18(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -532,7 +532,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg18(
 );
 
 /*Register #20 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg19(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg19(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -545,7 +545,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg19(
 );
 
 /*Register #21 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg20(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg20(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -557,7 +557,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg20(
 
 );
 /*Register #22 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg21(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg21(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -569,7 +569,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg21(
 
 );
 /*Register #23 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg22(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg22(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -581,7 +581,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg22(
 
 );
 /*Register #24 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg23(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg23(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -594,7 +594,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg23(
 );
 
 /*Register #25 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg24(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg24(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -607,7 +607,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg24(
 );
 
 /*Register #26 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg25(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg25(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -620,7 +620,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg25(
 );
 
 /*Register #27 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg26(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg26(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -634,7 +634,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg26(
 
 
 /*Register #28 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg27(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg27(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -647,7 +647,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg27(
 );
 
 /*Register #29 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg28(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg28(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -660,7 +660,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg28(
 );
 
 /*Register #30 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg29(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg29(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -674,7 +674,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg29(
 
 
 /*Register #31 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg30(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg30(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),
@@ -687,7 +687,7 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg30(
 );
 
 /*Register #32 instantiation*/
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Reg31(
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Reg31(
 
 //////////// INPUTS //////////
 .REG_Clk(REG_FILE_Clk),

@@ -1,5 +1,5 @@
 /*#########################################################################
-//# Main Control Unit 
+//# Main control unit
 //#########################################################################
 //#
 //# Copyright (C) 2021 Jose Maria Jaramillo Hoyos
@@ -21,171 +21,251 @@
 
 module MCU(
 
-//// inputs ////
+///// inputs /////
+MCU_Clk,
+MCU_Reset,
+MCU_Insmem_Valid,
+MCU_Datamem_Valid_In,
+MCU_Datamem_Ready_In,
 MCU_Opcode_InBUS,
 
-//// outputs ////
-
-MCU_Not_Branch_Jump_Op,
-MCU_DataMem_Read,
-MCU_DataMem_Write,
-MCU_RegFile_Mux_OutBUS,
-MCU_RegFile_Write,
-MCU_AluOp_OutBUS,
-MCU_Bru_En,
-MCU_Alu_Select_Immediate_Mux,
-MCU_Lsu_En
+///// outputs /////
+MCU_Internal_State,
+MCU_Pc_Reset, 
+MCU_Enpc_Set, 
+MCU_Enpc_Reset, 
+MCU_Ir_Reset,
+MCU_Ir_Set,
+MCU_RegFIle_Reset,
+MCU_Insmem_Ready,
+MCU_Datamem_Ready_Out,
+MCU_Datamem_Valid_Out
 
 );
 
-//============================================================
-//  PORT DECLARATIONS
-//============================================================
+//=======================================================
+//  State declarations
+//=======================================================
 
+localparam [2:0] State_reset			   = 3'b000;
+localparam [2:0] State_Wait			   = 3'b001;
+localparam [2:0] State_Fetch           = 3'b010;
+localparam [2:0] State_Decode	         = 3'b011;
+localparam [2:0] State_Wait_Valid   	= 3'b100;
+localparam [2:0] State_Wait_Ready  		= 3'b101;
+
+/// load/store instruction ///
+localparam LOAD 			= 8'b0000011;
+localparam STORE 			= 8'b0100011;
+
+//=======================================================
+//  PORT declarationsState_Feeding
+//=======================================================
+
+input MCU_Clk;
+input MCU_Reset;
+input MCU_Insmem_Valid; 
+input MCU_Datamem_Valid_In;
+input MCU_Datamem_Ready_In;
 input [6:0] MCU_Opcode_InBUS;
-output reg MCU_Not_Branch_Jump_Op;
-output reg MCU_DataMem_Read;
-output reg MCU_DataMem_Write;
-output reg[1:0] MCU_RegFile_Mux_OutBUS;
-output reg MCU_RegFile_Write;
-output reg[1:0] MCU_AluOp_OutBUS;
-output reg MCU_Bru_En;
-output reg MCU_Alu_Select_Immediate_Mux;
-output reg MCU_Lsu_En;
-
-//==============================================
-// OPCODES DEFINITION
-// ==============================================
-// 8'b0110111: LUI
-// 8'b0010111: AUIPC
-// 8'b1101111: JAL
-// 8'b1100111: JALR
-// 8'b1100011: TYPE-B
-// 8'b0000011: LB,LH,LW,LBU,LHU
-// 8'b0100011: SB,SH,SW
-// 8'b0010011: ADDI,SLTI,SLTIU,XORI,ORI,ANDI,SLLI,SRLI,SRAI
-// 8'b0110011: TYPE-R
-// ==============================================
-
-//============================================================
-//  PARAMETER DECLARATIONS
-//============================================================
-
-localparam LUI_AUIPC = 8'b0?10111; 
-localparam JAL_JALR  = 8'b110?111;
-localparam TYPE_B    = 8'b1100011;
-localparam LS 			= 8'b0?00011;
-localparam RI        = 8'b0?10011;
+output [2:0] MCU_Internal_State;
+output reg MCU_Pc_Reset;
+output reg MCU_Enpc_Set;
+output reg MCU_Enpc_Reset;
+output reg MCU_Ir_Reset;
+output reg MCU_Ir_Set;
+output reg MCU_RegFIle_Reset;
+output reg MCU_Insmem_Ready;
+output reg MCU_Datamem_Ready_Out;
+output reg MCU_Datamem_Valid_Out;
 
 //=======================================================
 //  REG/WIRE DECLARATIONS
 //=======================================================
+reg [2:0] State_Register;
+reg [2:0] State_Signal;
 
-wire Lui_Store_TypeR_Op ;
-
-//============================================================
-// COMBINATIONAL LOGIC
-//============================================================
-
-always@(MCU_Opcode_InBUS,Lui_Store_TypeR_Op)
+// Next state combinational logic
+always @(*)
 begin
 	
-	casex(MCU_Opcode_InBUS)
+	case(State_Register)
 	
-		LUI_AUIPC:
-		begin
-		 
-			MCU_Not_Branch_Jump_Op = 1'b0;
-			MCU_DataMem_Read 	  = 1'b0;
-			MCU_DataMem_Write = 1'b0;
-			MCU_RegFile_Mux_OutBUS = {~Lui_Store_TypeR_Op,1'b0}; 
-			MCU_RegFile_Write = 1'b1;
-			MCU_AluOp_OutBUS = 2'b11;
-			MCU_Bru_En = 1'b0;
-			MCU_Alu_Select_Immediate_Mux = 1'b1;
-			MCU_Lsu_En = 1'b0;	
-		end
-		
-		JAL_JALR:
-		begin
-		 
-			MCU_Not_Branch_Jump_Op = 1'b1;
-			MCU_DataMem_Read 	  = 1'b0;
-			MCU_DataMem_Write = 1'b0;
-			MCU_RegFile_Mux_OutBUS = 2'b11;
-			MCU_RegFile_Write = 1'b1;
-			MCU_AluOp_OutBUS = 2'b10;
-			MCU_Bru_En = 1'b0;
-			MCU_Alu_Select_Immediate_Mux = 1'b1;
-			MCU_Lsu_En = 1'b0;	
-		end
-		
-		TYPE_B:
-		begin
-		 
-			MCU_Not_Branch_Jump_Op = 1'b0;
-			MCU_DataMem_Read 	  = 1'b0;
-			MCU_DataMem_Write = 1'b0;
-			MCU_RegFile_Mux_OutBUS = 2'b00;
-			MCU_RegFile_Write = 1'b0;
-			MCU_AluOp_OutBUS = 2'b00;
-			MCU_Bru_En = 1'b1;
-			MCU_Alu_Select_Immediate_Mux = 1'b0;
-			MCU_Lsu_En = 1'b0;	
-		end
-		
-		LS:
-		begin
-		
-			MCU_Not_Branch_Jump_Op = 1'b0;
-			MCU_DataMem_Read 	 = ~Lui_Store_TypeR_Op;
-			MCU_DataMem_Write = Lui_Store_TypeR_Op;
-			MCU_RegFile_Mux_OutBUS = 2'b01;
-			MCU_RegFile_Write = ~Lui_Store_TypeR_Op;
-			MCU_AluOp_OutBUS = 2'b01;
-			MCU_Bru_En = 1'b0;
-			MCU_Alu_Select_Immediate_Mux = 1'b1;
-			MCU_Lsu_En = 1'b1;	
-		end
-		
-		
-		RI:
-		begin
-		
-			MCU_Not_Branch_Jump_Op = 1'b0;
-			MCU_DataMem_Read 	  = 1'b0;
-			MCU_DataMem_Write = 1'b0;
-			MCU_RegFile_Mux_OutBUS = 2'b00;
-			MCU_RegFile_Write = 1'b1;
-			MCU_AluOp_OutBUS = 2'b00;
-			MCU_Bru_En = 1'b0;
-			MCU_Alu_Select_Immediate_Mux = ~Lui_Store_TypeR_Op;
-			MCU_Lsu_En = 1'b0;	
-		end
-		
+	State_reset: if(!MCU_Pc_Reset)
+						State_Signal=State_reset;
+					 else
+						State_Signal=State_Wait;
+						
+						
+	State_Wait:  if(MCU_Insmem_Valid)
+						State_Signal=State_Fetch;
+					 else
+						State_Signal=State_Wait;
+							
+	State_Fetch: 
+	begin
+			
+			case(MCU_Opcode_InBUS)
+				
+				LOAD:
+				begin
+					State_Signal=State_Wait_Valid;
+				end
+				
+				STORE:
+				begin
+					State_Signal=State_Wait_Ready;
+				end
+			
+				default:
+					State_Signal=State_Decode;
+							
+			endcase
+			
+	end
+	
+	
+	State_Wait_Valid: if(MCU_Datamem_Valid_In)
+								State_Signal=State_Decode;
+							else
+								State_Signal=State_Wait_Valid;
+	
+	
+	State_Wait_Ready: if(MCU_Datamem_Ready_In)
+								State_Signal=State_Decode;
+							else
+								State_Signal=State_Wait_Ready;
+	
+	
+	State_Decode:State_Signal=State_Wait;
 
-		default:
-			begin
-				MCU_Not_Branch_Jump_Op = 1'b0;
-				MCU_DataMem_Read 	  = 1'b0;
-				MCU_DataMem_Write = 1'b0;
-				MCU_RegFile_Mux_OutBUS = 2'b00;
-				MCU_RegFile_Write = 1'b0;
-				MCU_AluOp_OutBUS = 2'b00;
-				MCU_Bru_En = 1'b0;
-				MCU_Alu_Select_Immediate_Mux = 1'b0;
-				MCU_Lsu_En = 1'b0;	
-			end
-		
+	
+	default: State_Signal =State_reset;
+	
 	endcase
+
 	
 end
 
 
-assign Lui_Store_TypeR_Op   = MCU_Opcode_InBUS[5];
+// Sequential Logic // asynchronous active low reset
+always @ (posedge MCU_Clk, negedge MCU_Reset)
+begin
+		if(!MCU_Reset)
+			State_Register <= State_reset;
+		else
+			State_Register <= State_Signal;
+end
 
+
+
+// COMBINATIONAL OUTPUT LOGIC
+always @ (*)
+begin
+	
+	case(State_Register)
+	
+		State_reset:
+		begin
+			MCU_Pc_Reset=1'b1; 
+			MCU_Enpc_Set=1'b0;
+			MCU_Enpc_Reset=1'b0;
+			MCU_Ir_Reset=1'b1;
+			MCU_Ir_Set=1'b0;
+			MCU_RegFIle_Reset=1'b1;
+			MCU_Insmem_Ready=1'b0;
+			MCU_Datamem_Ready_Out=1'b0;
+			MCU_Datamem_Valid_Out=1'b0;
+		end
+		
+		
+		State_Wait:
+		begin
+			MCU_Pc_Reset=1'b0; 
+			MCU_Enpc_Set=1'b0;
+			MCU_Enpc_Reset=1'b1;
+			MCU_Ir_Reset=1'b0;
+			MCU_Ir_Set=1'b0;
+			MCU_RegFIle_Reset=1'b0;
+			MCU_Insmem_Ready=1'b1;
+			MCU_Datamem_Ready_Out=1'b0;
+			MCU_Datamem_Valid_Out=1'b0;
+		end
+		
+		State_Fetch:
+		begin
+			MCU_Pc_Reset=1'b0; 
+			MCU_Enpc_Set=1'b0;
+			MCU_Enpc_Reset=1'b1;
+			MCU_Ir_Reset=1'b0;
+			MCU_Ir_Set=1'b1;
+			MCU_RegFIle_Reset=1'b0;
+			MCU_Insmem_Ready=1'b0;
+			MCU_Datamem_Ready_Out=1'b0;
+			MCU_Datamem_Valid_Out=1'b0;
+		end
+		
+		
+		State_Decode:
+		begin
+			MCU_Pc_Reset=1'b0; 
+			MCU_Enpc_Set=1'b1;
+			MCU_Enpc_Reset=1'b1;
+			MCU_Ir_Reset=1'b0;
+			MCU_Ir_Set=1'b0;
+			MCU_RegFIle_Reset=1'b0;
+			MCU_Insmem_Ready=1'b0;
+			MCU_Datamem_Ready_Out=1'b0;
+			MCU_Datamem_Valid_Out=1'b0;
+		end
+		
+		
+		State_Wait_Ready:
+		begin
+			MCU_Pc_Reset=1'b0; 
+			MCU_Enpc_Set=1'b0;
+			MCU_Enpc_Reset=1'b0;
+			MCU_Ir_Reset=1'b0;
+			MCU_Ir_Set=1'b0;
+			MCU_RegFIle_Reset=1'b0;
+			MCU_Insmem_Ready=1'b0;
+			MCU_Datamem_Ready_Out=1'b0;
+			MCU_Datamem_Valid_Out=1'b1;
+		end
+		
+		
+		
+		State_Wait_Valid:
+		begin
+			MCU_Pc_Reset=1'b0; 
+			MCU_Enpc_Set=1'b0;
+			MCU_Enpc_Reset=1'b0;
+			MCU_Ir_Reset=1'b0;
+			MCU_Ir_Set=1'b0;
+			MCU_RegFIle_Reset=1'b0;
+			MCU_Insmem_Ready=1'b0;
+			MCU_Datamem_Ready_Out=1'b1;
+			MCU_Datamem_Valid_Out=1'b0;
+		end
+		
+		default:
+		begin
+			MCU_Pc_Reset=1'b1; 
+			MCU_Enpc_Set=1'b0;
+			MCU_Enpc_Reset=1'b0;
+			MCU_Ir_Reset=1'b1;
+			MCU_Ir_Set=1'b0;
+			MCU_RegFIle_Reset=1'b1;
+			MCU_Insmem_Ready=1'b0;	
+			MCU_Datamem_Ready_Out=1'b0;
+			MCU_Datamem_Valid_Out=1'b0;
+		end
+		
+	endcase
+end
+
+
+assign MCU_Internal_State = State_Register;
 
 
 endmodule
-
-

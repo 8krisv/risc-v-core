@@ -33,6 +33,10 @@
 #define NUMERRORMSG 32
 #define MAXSIZEERROR 128
 
+#define RED   "\x1B[31m"
+#define GRN   "\x1B[32m"
+#define RESET "\x1B[0m"
+
 static int _eror_buff_size=NUMERRORMSG;
 static char _bufferror[MAXSIZEERROR]; /*buffer for error message*/
 
@@ -405,11 +409,10 @@ void error(char** stderr_buff){
         for (int i = 0;stderr_buff[i]!=NULL ; i++){
             fprintf(stderr,"%s",stderr_buff[i]);
         }
+        fprintf(stderr,"%s","Compilation failed\n");
         exit(EXIT_FAILURE);
     }
 }
-
-
 
 void get_op_format(int opcode,char* format){
 
@@ -708,7 +711,7 @@ int get_compiled_instruction(list* head){
 
 void compile(list** sym_table, int size, char* output_name, int show_mem_flag){
 
-    char buffname[50];
+  
     
     int* compile_instructions = malloc(sizeof(int)*size);
 
@@ -726,9 +729,8 @@ void compile(list** sym_table, int size, char* output_name, int show_mem_flag){
 
     FILE *bin;
      
-    sprintf(buffname,"%s.bin",output_name);
 
-    bin = fopen(buffname,"wb");
+    bin = fopen(output_name,"wb");
     fwrite(compile_instructions,sizeof(int),size,bin);
     fclose(bin);
 
@@ -736,8 +738,10 @@ void compile(list** sym_table, int size, char* output_name, int show_mem_flag){
 
         FILE *text;
         int opcode;
-        sprintf(buffname,"%s_mem.txt",output_name);
-        text = fopen(buffname,"w");
+        char textname[50];
+
+        sprintf(textname,"%s_mem.txt",strtok(output_name,"."));
+        text = fopen(textname,"w");
 
         j=0;
 
@@ -779,11 +783,11 @@ void compile(list** sym_table, int size, char* output_name, int show_mem_flag){
 }
 
 
-void parse_arguments(char** name, int* showmem, int argc , char** argv){
+void parse_arguments(char* name, int* showmem, int argc , char** argv){
 
     int option;
-    
-    *name=strtok(argv[1],".");
+  
+    sprintf(name,"%s.bin",strtok(argv[1],".")); //default name
 
     while ((option = getopt(argc, argv, "o:m")) != -1) {
         
@@ -792,7 +796,7 @@ void parse_arguments(char** name, int* showmem, int argc , char** argv){
             case 'o':
                 
                 if (optarg){
-                    *name= optarg;
+                    sprintf(name,"%s",optarg);
                 }
               
                 break;
@@ -805,6 +809,7 @@ void parse_arguments(char** name, int* showmem, int argc , char** argv){
                 break;
         }
     }
+
 }
 
 
@@ -818,7 +823,7 @@ int main(int argc, char** argv){
 
     FILE* fp;
 
-    char* bin_name;
+    char buffname[50];
     int show_mem_flag=0;
 
     if (argc < 2){
@@ -836,7 +841,7 @@ int main(int argc, char** argv){
     }
 
     /*parsing arguments*/
-    parse_arguments(&bin_name,&show_mem_flag,argc,argv);
+    parse_arguments(buffname,&show_mem_flag,argc,argv);
 
     /*loading op lexemes and regs name in a binary search tree for time complexity  O(logn) in searches*/
     ops_bst=load_ops_bst();
@@ -855,7 +860,7 @@ int main(int argc, char** argv){
 
 
     /*compilation stage*/
-    compile(sym_table,ninstr,bin_name,show_mem_flag);
+    compile(sym_table,ninstr,buffname,show_mem_flag);
 
 
     printf("Successful compilation!\n");

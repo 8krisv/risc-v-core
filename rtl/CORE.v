@@ -1,5 +1,5 @@
 /*#########################################################################
-//# RISC-V FIXED CLOCK CYCLE CORE (RV32I BASE INSTRUCTION SET)
+//# RISC-V MULTY CYCLE CORE (RV32I BASE INSTRUCTION SET)
 //#########################################################################
 //#
 //# Copyright (C) 2021 Jose Maria Jaramillo Hoyos
@@ -22,21 +22,24 @@
 module CORE #(parameter DATAWIDTH=32)(
 
 ///// inputs /////
-
-CORE_Clk_in,
-CORE_Reset_in,
+CORE_Clk_In,
+CORE_Reset_In,
 CORE_Insmem_Readdata_InBUS,
+CORE_Insmem_Valid_In,
 CORE_Datamem_Readdata_InBUS,
+CORE_Datamem_Valid_In,
+CORE_Datamem_Ready_In,
 
 //// outputs ////
-
-CORE_Insmem_Read,
+CORE_Insmem_Ready_Out,
 Core_Insmem_Addr_OutBUS,
-CORE_Datamem_Read,
-CORE_Datamem_Write,
+CORE_Datamem_Ready_Out,
+CORE_Datamem_Valid_Out,
 CORE_Datamem_Byteenable_OutBUS,
 CORE_Datamem_Writedata_outBUS,
 CORE_Datamem_Addr_OutBUS
+
+
 );
 
 
@@ -44,14 +47,17 @@ CORE_Datamem_Addr_OutBUS
 //  PORT DECLARATIONS
 //============================================================
 
-input CORE_Clk_in;
-input CORE_Reset_in;
+input CORE_Clk_In;
+input CORE_Reset_In;
 input [DATAWIDTH-1:0]CORE_Insmem_Readdata_InBUS;
+input CORE_Insmem_Valid_In;
 input [DATAWIDTH-1:0]CORE_Datamem_Readdata_InBUS;
-output CORE_Insmem_Read;
+input  CORE_Datamem_Valid_In;
+input  CORE_Datamem_Ready_In;
+output CORE_Insmem_Ready_Out;
 output [DATAWIDTH-1:0] Core_Insmem_Addr_OutBUS;
-output CORE_Datamem_Read;
-output CORE_Datamem_Write;
+output CORE_Datamem_Ready_Out;
+output CORE_Datamem_Valid_Out;
 output [3:0] CORE_Datamem_Byteenable_OutBUS;
 output [DATAWIDTH-1:0] CORE_Datamem_Writedata_outBUS;
 output [DATAWIDTH-1:0] CORE_Datamem_Addr_OutBUS;
@@ -84,13 +90,13 @@ wire [2:0] Funct3_InBUS_Wire;
 
 
 
-wire Mcu_Not_Branch_Jump_Op_Wire;
-wire [1:0] Mcu_RegFile_Mux_OutBUS_Wire;
-wire Mcu_RegFile_Write_Wire;
-wire [1:0] Mcu_AluOp_OutBUS_Wire;
-wire Mcu_Bru_En_Wire;
-wire Mcu_Alu_Select_Immediate_Mux_Wire;
-wire Mcu_Lsu_En_Wire;
+wire Idu_Not_Branch_Jump_Op_Wire;
+wire [1:0] Idu_RegFile_Mux_OutBUS_Wire;
+wire Idu_RegFile_Write_Wire;
+wire [1:0] Idu_AluOp_OutBUS_Wire;
+wire Idu_Bru_En_Wire;
+wire Idu_Alu_Select_Immediate_Mux_Wire;
+wire Idu_Lsu_En_Wire;
 
 
 wire [DATAWIDTH-1:0] Register_File_Data1_OutBUS_Wire;
@@ -117,12 +123,13 @@ wire [DATAWIDTH-1:0] MuxD_Data_OutBUS_Wire;
 
 wire [DATAWIDTH-1:0] Add0_Rest_OutBUS_Wire;
 
-wire Rcu_Pc_Reset_Wire;
-wire Rcu_Enpc_set_Wire;
-wire Rcu_Enpc_reset_Wire;
-wire Rcu_Ir_Reset_Wire;
-wire Rcu_Ir_Set_Wire;
-wire Rcu_RegFile_Reset_Wire;
+wire [2:0] Mcu_State_Wire;
+wire Mcu_Pc_Reset_Wire;
+wire Mcu_Enpc_set_Wire;
+wire Mcu_Enpc_reset_Wire;
+wire Mcu_Ir_Reset_Wire;
+wire Mcu_Ir_Set_Wire;
+wire Mcu_RegFile_Reset_Wire;
 
 wire Enpc_Set_En;
 
@@ -138,9 +145,9 @@ wire Wsignal_RegFile_Write;
 REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Iregister (
 
 //////////// INPUTS //////////
-.REG_Clk(CORE_Clk_in),
-.REG_Reset(Rcu_Ir_Reset_Wire),
-.REG_Set(Rcu_Ir_Set_Wire),
+.REG_Clk(CORE_Clk_In),
+.REG_Reset(Mcu_Ir_Reset_Wire),
+.REG_Set(Mcu_Ir_Set_Wire),
 .REG_Data_InBUS(CORE_Insmem_Readdata_InBUS),
 //////////// OUTPUTS //////////
 .REG_Data_OutBUS(Iregister_OutBUS_Wire)
@@ -150,12 +157,12 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Iregister (
 
 /*Program counter instantiation*/
 
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Pc (
+REG_POS #(.REG_DATA_WIDTH(DATAWIDTH)) Pc (
 
 //////////// INPUTS //////////
-.REG_Clk(CORE_Clk_in),
-.REG_Reset(Rcu_Pc_Reset_Wire),
-.REG_Set(Enpc_Set_En),
+.REG_Clk(CORE_Clk_In),
+.REG_Reset(~Mcu_Pc_Reset_Wire),
+.REG_Set(Mcu_Enpc_set_Wire),
 .REG_Data_InBUS(MuxC_Data_OutBUS_Wire),
 //////////// OUTPUTS //////////
 .REG_Data_OutBUS(Pc_Addr_OutBUS_Wire)
@@ -168,9 +175,9 @@ REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Pc (
 ENPC Enpc(
 
 //////////// INPUTS //////////
-.ENPC_Clk(CORE_Clk_in),
-.ENPC_En(Rcu_Enpc_set_Wire),
-.ENPC_Reset(Rcu_Enpc_reset_Wire),
+.ENPC_Clk(CORE_Clk_In),
+.ENPC_En(Mcu_Enpc_set_Wire),
+.ENPC_Reset(Mcu_Enpc_reset_Wire),
 //////////// OUTPUTS //////////,
 .ENPC_Set_En(Enpc_Set_En)
 
@@ -232,9 +239,9 @@ IMM_GEN   Imm_Generation(
 REG_FILE Register_File(
 
  /////// inputs ///////
-.REG_FILE_Clk(CORE_Clk_in),
-.REG_FILE_Reset_in(Rcu_RegFile_Reset_Wire),
-.REG_FILE_Write_En(Wsignal_RegFile_Write),
+.REG_FILE_Clk(CORE_Clk_In),
+.REG_FILE_Reset_in(~Mcu_RegFile_Reset_Wire),
+.REG_FILE_Write_En(Idu_RegFile_Write_Wire),
 .REG_FILE_Data_InBUS(MuxD_Data_OutBUS_Wire),
 .REG_FILE_R1_InBUS(Rs1_InBUS_Wire), 
 .REG_FILE_R2_InBUS(Rs2_InBUS_Wire),
@@ -251,8 +258,8 @@ REG_FILE Register_File(
 WSIGNAL Wsignal(
 
 ///// inputs /////
-.WSIGNAL_Clk(CORE_Clk_in),
-.WSIGNAL_En(Mcu_RegFile_Write_Wire),
+.WSIGNAL_Clk(CORE_Clk_In),
+.WSIGNAL_En(Idu_RegFile_Write_Wire),
 ///// outputs /////
 .WSIGNAL_RegFile_Write(Wsignal_RegFile_Write)
 
@@ -266,7 +273,7 @@ MUX_2_1 #(.INPUT_DATA_WIDTH()) MuxA (
 //////////// INPUTS //////////
 .MUX_Input_0(Register_File_Data2_OutBUS_Wire),
 .MUX_Input_1(Imm_Generation_OutBUS_Wire),
-.MUX_Sel(Mcu_Alu_Select_Immediate_Mux_Wire),
+.MUX_Sel(Idu_Alu_Select_Immediate_Mux_Wire),
 
 //////////// OUTPUT //////////
 .MUX_Output_OutBUS(MuxA_Data_OutBUS_Wire)
@@ -279,7 +286,7 @@ ACU Acu(
 
 //// inputs ////
 
-.ACU_AluOP_InBUS(Mcu_AluOp_OutBUS_Wire),
+.ACU_AluOP_InBUS(Idu_AluOp_OutBUS_Wire),
 .ACU_Funt3_InBUS(Funct3_InBUS_Wire),
 .ACU_Funt7_b5(Funct7_InBUS_Wire[5]), /*bit 5 of the funct7 field*/
 .ACU_Opcode_b5(Opcode_InBUS_Wire[5]), /*bit 5 of the opcode field*/
@@ -309,7 +316,7 @@ ALU Alu(
 JCU Jcu(
 
 //// inputs ////
-.JCU_En(Mcu_Not_Branch_Jump_Op_Wire),
+.JCU_En(Idu_Not_Branch_Jump_Op_Wire),
 .JCU_Opcode_b3(Opcode_InBUS_Wire[3]),
 
 //// outputs ////
@@ -327,7 +334,7 @@ BRU Bru(
 .BRU_rs1_data_InBUS(Register_File_Data1_OutBUS_Wire),
 .BRU_rs2_data_InBUS(Register_File_Data2_OutBUS_Wire),
 .BRU_funct3_InBUS(Funct3_InBUS_Wire),
-.BRU_bren(Mcu_Bru_En_Wire),
+.BRU_bren(Idu_Bru_En_Wire),
 
 ///// outputs /////
 .BRU_en(Bru_Muxc_En_Wire)
@@ -358,7 +365,7 @@ LSU #(.DATAWIDTH(DATAWIDTH)) Lsu (
 .LSU_MemData_InBUS(CORE_Datamem_Readdata_InBUS),
 .LSU_Funct3_InBUS(Funct3_InBUS_Wire),
 .LSU_Store(Opcode_InBUS_Wire[5]),
-.LSU_En(Mcu_Lsu_En_Wire),
+.LSU_En(Idu_Lsu_En_Wire),
 
 //// output ////
 .LSU_Byteenable_OutBUS(CORE_Datamem_Byteenable_OutBUS),
@@ -375,7 +382,7 @@ MUX_4_1 #(.INPUT_DATA_WIDTH(DATAWIDTH)) Muxd(
 .MUX_Input_2(Add1_Rest_OutBUS_Wire),
 .MUX_Input_3(Add0_Rest_OutBUS_Wire),
 
-.MUX_Sel_InBUS(Mcu_RegFile_Mux_OutBUS_Wire),
+.MUX_Sel_InBUS(Idu_RegFile_Mux_OutBUS_Wire),
 
 //////////// OUTPUT //////////
 .MUX_Output_OutBUS(MuxD_Data_OutBUS_Wire)
@@ -384,49 +391,50 @@ MUX_4_1 #(.INPUT_DATA_WIDTH(DATAWIDTH)) Muxd(
 );
 
 
-
-
-/*Reset control unit*/
-RCU Rcu(
+/*Main control unit*/
+MCU Mcu(
 
 ///// inputs /////
-.RCU_Clk(CORE_Clk_in),
-.RCU_Reset(CORE_Reset_in),
+.MCU_Clk(CORE_Clk_In),
+.MCU_Reset(CORE_Reset_In),
+.MCU_Insmem_Valid(CORE_Insmem_Valid_In),
+.MCU_Datamem_Valid_In(CORE_Datamem_Valid_In),
+.MCU_Datamem_Ready_In(CORE_Datamem_Ready_In),
+.MCU_Opcode_InBUS(Opcode_InBUS_Wire),
 ///// outputs /////
-
-.RCU_Pc_Reset(Rcu_Pc_Reset_Wire), 
-.RCU_Enpc_Set(Rcu_Enpc_set_Wire),
-.RCU_Enpc_Reset(Rcu_Enpc_reset_Wire),
-.RCU_Ir_Reset(Rcu_Ir_Reset_Wire),
-.RCU_Ir_Set(Rcu_Ir_Set_Wire),
-.RCU_RegFIle_Reset(Rcu_RegFile_Reset_Wire),
-.RCU_Insmem_Read(CORE_Insmem_Read)
+.MCU_Internal_State(Mcu_State_Wire),
+.MCU_Pc_Reset(Mcu_Pc_Reset_Wire), 
+.MCU_Enpc_Set(Mcu_Enpc_set_Wire),
+.MCU_Enpc_Reset(Mcu_Enpc_reset_Wire),
+.MCU_Ir_Reset(Mcu_Ir_Reset_Wire),
+.MCU_Ir_Set(Mcu_Ir_Set_Wire),
+.MCU_RegFIle_Reset(Mcu_RegFile_Reset_Wire),
+.MCU_Insmem_Ready(CORE_Insmem_Ready_Out),
+.MCU_Datamem_Ready_Out(CORE_Datamem_Ready_Out),
+.MCU_Datamem_Valid_Out(CORE_Datamem_Valid_Out)
 
 );
 
 
-/*Main control unit instantiation*/
+/*Instruction decode unit instantiation*/
 
-MCU Mcu(
+IDU IDU(
 
 //// inputs ////
-.MCU_Opcode_InBUS(Opcode_InBUS_Wire),
+.IDU_Opcode_InBUS(Opcode_InBUS_Wire),
+.IDU_Mcu_State(Mcu_State_Wire),
 
 //// outputs ////
 
-.MCU_Not_Branch_Jump_Op(Mcu_Not_Branch_Jump_Op_Wire),
-.MCU_DataMem_Read(CORE_Datamem_Read),
-.MCU_DataMem_Write(CORE_Datamem_Write),
-.MCU_RegFile_Mux_OutBUS(Mcu_RegFile_Mux_OutBUS_Wire),
-.MCU_RegFile_Write(Mcu_RegFile_Write_Wire),
-.MCU_AluOp_OutBUS(Mcu_AluOp_OutBUS_Wire),
-.MCU_Bru_En(Mcu_Bru_En_Wire),
-.MCU_Alu_Select_Immediate_Mux(Mcu_Alu_Select_Immediate_Mux_Wire),
-.MCU_Lsu_En(Mcu_Lsu_En_Wire)
+.IDU_Not_Branch_Jump_Op(Idu_Not_Branch_Jump_Op_Wire),
+.IDU_RegFile_Mux_OutBUS(Idu_RegFile_Mux_OutBUS_Wire),
+.IDU_RegFile_Write(Idu_RegFile_Write_Wire),
+.IDU_AluOp_OutBUS(Idu_AluOp_OutBUS_Wire),
+.IDU_Bru_En(Idu_Bru_En_Wire),
+.IDU_Alu_Select_Immediate_Mux(Idu_Alu_Select_Immediate_Mux_Wire),
+.IDU_Lsu_En(Idu_Lsu_En_Wire)
 
 );
-
-
 
 
 assign Core_Insmem_Addr_OutBUS = Pc_Addr_OutBUS_Wire;
@@ -440,6 +448,11 @@ assign Rd_InBUS_Wire = Iregister_OutBUS_Wire[11:7];
 assign Opcode_InBUS_Wire = Iregister_OutBUS_Wire[6:0];
 assign Funct7_InBUS_Wire = Iregister_OutBUS_Wire[31:25];
 assign Funct3_InBUS_Wire = Iregister_OutBUS_Wire[14:12];
+
+
+
+
+
 
 
 endmodule

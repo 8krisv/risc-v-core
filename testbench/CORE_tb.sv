@@ -41,7 +41,6 @@ localparam [31:0] Clock_Cycle_Limit = 32'h00001388; // 5000
 reg tb_clk_50;
 reg tb_reset;
 
-
 //////////// Output signals declarations ////////////
 
 wire core_isnsmem_read;
@@ -52,30 +51,41 @@ wire [3:0] core_byteenable_outbus;
 wire [DATAWIDTH-1:0] core_writedata_outbus;
 wire [DATAWIDTH-1:0] core_datamem_addr_outbus;
 wire [DATAWIDTH-1:0] ins_mem_data_outbus;
+wire ins_mem_read_valid;
+wire ins_mem_write_ready;
 wire [DATAWIDTH-1:0] data_mem_data_outbus;
-wire data_mem_request_ready;
+wire data_mem_read_valid;
+wire data_mem_write_ready;
 
 
 /* Device Under Test (DUT) instantiation */
 
 CORE #(.DATAWIDTH(DATAWIDTH)) RiscCore(
 
-///// inputs /////
 
-.CORE_Clk_in(tb_clk_50),
-.CORE_Reset_in(tb_reset),
-.CORE_Insmem_Readdata_InBUS(ins_mem_data_outbus),
-.CORE_Datamem_Readdata_InBUS(data_mem_data_outbus),
+///// Clk/Reset ////
+.CORE_Clk_In(tb_clk_50),
+.CORE_Reset_In(tb_reset),
 
-//// outputs ////
 
-.CORE_Insmem_Read(core_isnsmem_read),
+///// Instruction memory interface ////
+.CORE_Insmem_Ready_Out(core_isnsmem_read),
+.CORE_Insmem_Valid_In(ins_mem_read_valid),
 .Core_Insmem_Addr_OutBUS(core_isnsmem_addr_outbus),
-.CORE_Datamem_Read(core_datamem_read),
-.CORE_Datamem_Write(core_datamem_write),
-.CORE_Datamem_Byteenable_OutBUS(core_byteenable_outbus),
+.CORE_Insmem_Readdata_InBUS(ins_mem_data_outbus),
+
+
+
+///// Data memory interface ////
+.CORE_Datamem_Ready_Out(core_datamem_read),
+.CORE_Datamem_Valid_In(data_mem_read_valid),
+.CORE_Datamem_Readdata_InBUS(data_mem_data_outbus),
+.CORE_Datamem_Valid_Out(core_datamem_write),
+.CORE_Datamem_Ready_In(data_mem_write_ready),
 .CORE_Datamem_Writedata_outBUS(core_writedata_outbus),
-.CORE_Datamem_Addr_OutBUS(core_datamem_addr_outbus)
+.CORE_Datamem_Addr_OutBUS(core_datamem_addr_outbus),
+.CORE_Datamem_Byteenable_OutBUS(core_byteenable_outbus)
+
 );
 
 
@@ -92,7 +102,11 @@ INS_MEM #(.ADDR_WIDTH(INS_MEM_ADDR_WIDTH), .BINPATH(PROGRAMPATH)) ins_mem
 .INS_MEM_Data_In(32'h00000000),
 
 //////////// OUTPUT //////////
-.INS_MEM_Data_Out(ins_mem_data_outbus)
+.INS_MEM_Data_Out(ins_mem_data_outbus),
+.INS_MEM_Read_Valid(ins_mem_read_valid),
+.INS_MEM_Write_Ready(ins_mem_write_ready)
+
+
 );
 
 
@@ -110,7 +124,9 @@ DATAMEM #(.ADDR_BITWIDTH(DATA_MEM_ADDR_WIDTH)) data_mem
 .DATAMEM_Data_In(core_writedata_outbus),
 
 //////////// OUTPUT //////////
-.DATAMEM_Data_Out(data_mem_data_outbus)
+.DATAMEM_Data_Out(data_mem_data_outbus),
+.DATAMEM_Read_Valid(data_mem_read_valid),
+.DATAMEM_Write_Ready(data_mem_write_ready)
 );
 
 
@@ -134,13 +150,11 @@ begin
 	@(negedge tb_clk_50)
 	@(posedge tb_clk_50)
 	tb_reset<=1'b1;
-	
+
 	for(integer i =0; CORE_tb.RiscCore.Register_File.Reg31_Output != 32'hffffffff ;i=i+1)
 	begin
-	
 		@(posedge tb_clk_50)
 		Clock_Cycle_Counter<=Clock_Cycle_Counter + 32'h00000001;
-		
 		if(Clock_Cycle_Counter ==Clock_Cycle_Limit )begin
 			$display("Warning clock cycles limit has been reached");
 			break;

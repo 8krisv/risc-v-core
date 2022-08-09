@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CORE-RISC-V
-Thu Jul 21 14:45:24 2022
+Tue Aug  9 09:41:50 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,63 +13,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |CORE
- 12. Parameter Settings for User Entity Instance: REG_NEG:Iregister
- 13. Parameter Settings for User Entity Instance: REG_NEG:Pc
- 14. Parameter Settings for User Entity Instance: ADDER:Add0
- 15. Parameter Settings for User Entity Instance: ADDER:Add1
- 16. Parameter Settings for User Entity Instance: MUX_2_1:MuxB
- 17. Parameter Settings for User Entity Instance: IMM_GEN:Imm_Generation
- 18. Parameter Settings for User Entity Instance: REG_FILE:Register_File
- 19. Parameter Settings for User Entity Instance: REG_FILE:Register_File|DEMUX_1_32:Demux_Selector_Rd
- 20. Parameter Settings for User Entity Instance: REG_FILE:Register_File|MUX_32_1:Mux_Output_R1
- 21. Parameter Settings for User Entity Instance: REG_FILE:Register_File|MUX_32_1:Mux_Output_R2
- 22. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg0
- 23. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg1
- 24. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg2
- 25. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg3
- 26. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg4
- 27. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg5
- 28. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg6
- 29. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg7
- 30. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg8
- 31. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg9
- 32. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg10
- 33. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg11
- 34. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg12
- 35. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg13
- 36. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg14
- 37. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg15
- 38. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg16
- 39. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg17
- 40. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg18
- 41. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg19
- 42. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg20
- 43. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg21
- 44. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg22
- 45. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg23
- 46. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg24
- 47. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg25
- 48. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg26
- 49. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg27
- 50. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg28
- 51. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg29
- 52. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg30
- 53. Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg31
- 54. Parameter Settings for User Entity Instance: MUX_2_1:MuxA
- 55. Parameter Settings for User Entity Instance: ALU:Alu
- 56. Parameter Settings for User Entity Instance: MUX_2_1:MuxC
- 57. Parameter Settings for User Entity Instance: LSU:Lsu
- 58. Parameter Settings for User Entity Instance: MUX_4_1:Muxd
- 59. Port Connectivity Checks: "REG_FILE:Register_File|REG_NEG:Reg0"
- 60. Port Connectivity Checks: "REG_FILE:Register_File|DEMUX_1_32:Demux_Selector_Rd"
- 61. Port Connectivity Checks: "ADDER:Add0"
- 62. Post-Synthesis Netlist Statistics for Top Partition
- 63. Elapsed Time Per Partition
- 64. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |AXI_RAM
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -96,14 +44,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jul 21 14:45:24 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Aug  9 09:41:49 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; CORE-RISC-V                                 ;
-; Top-level Entity Name           ; CORE                                        ;
+; Top-level Entity Name           ; AXI_RAM                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1059                                        ;
-; Total pins                      ; 169                                         ;
+; Total registers                 ; 16448                                       ;
+; Total pins                      ; 79                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -122,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA4U23C6       ;                    ;
-; Top-level entity name                                                           ; CORE               ; CORE-RISC-V        ;
+; Top-level entity name                                                           ; AXI_RAM            ; CORE-RISC-V        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -217,36 +165,19 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; ../rtl/LSU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v        ;         ;
-; ../rtl/REG_FILE.v                ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v   ;         ;
-; ../rtl/ALU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ALU.v        ;         ;
-; ../rtl/DEMUX_1_32.v              ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v ;         ;
-; ../rtl/MUX_32_1.v                ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v   ;         ;
-; ../rtl/REG_NEG.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v    ;         ;
-; ../rtl/IMM_GEN.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v    ;         ;
-; ../rtl/BRU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v        ;         ;
-; ../rtl/MCU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v        ;         ;
-; ../rtl/ACU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v        ;         ;
-; ../rtl/JCU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v        ;         ;
-; ../rtl/MUX_2_1.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v    ;         ;
-; ../rtl/MUX_4_1.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v    ;         ;
-; ../rtl/CORE.v                    ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v       ;         ;
-; ../rtl/ADDER.v                   ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v      ;         ;
-; ../rtl/RCU.v                     ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/RCU.v        ;         ;
-; ../rtl/ENPC.v                    ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ENPC.v       ;         ;
-; ../rtl/WSIGNAL.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v    ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
+; ../rtl/AXI_RAM.v                 ; yes             ; User Verilog HDL File  ; /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------+
@@ -254,98 +185,36 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1218              ;
+; Estimate of Logic utilization (ALMs needed) ; 11050             ;
 ;                                             ;                   ;
-; Combinational ALUT usage for logic          ; 1405              ;
-;     -- 7 input functions                    ; 44                ;
-;     -- 6 input functions                    ; 854               ;
-;     -- 5 input functions                    ; 208               ;
-;     -- 4 input functions                    ; 132               ;
-;     -- <=3 input functions                  ; 167               ;
+; Combinational ALUT usage for logic          ; 6037              ;
+;     -- 7 input functions                    ; 0                 ;
+;     -- 6 input functions                    ; 5505              ;
+;     -- 5 input functions                    ; 0                 ;
+;     -- 4 input functions                    ; 19                ;
+;     -- <=3 input functions                  ; 513               ;
 ;                                             ;                   ;
-; Dedicated logic registers                   ; 1059              ;
+; Dedicated logic registers                   ; 16448             ;
 ;                                             ;                   ;
-; I/O pins                                    ; 169               ;
+; I/O pins                                    ; 79                ;
 ;                                             ;                   ;
 ; Total DSP Blocks                            ; 0                 ;
 ;                                             ;                   ;
-; Maximum fan-out node                        ; CORE_Clk_in~input ;
-; Maximum fan-out                             ; 1061              ;
-; Total fan-out                               ; 12014             ;
-; Average fan-out                             ; 4.29              ;
+; Maximum fan-out node                        ; AXI_RAM_Clk~input ;
+; Maximum fan-out                             ; 16448             ;
+; Total fan-out                               ; 84102             ;
+; Average fan-out                             ; 3.71              ;
 +---------------------------------------------+-------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
-+--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name ; Library Name ;
-+--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
-; |CORE                                ; 1405 (1)            ; 1059 (0)                  ; 0                 ; 0          ; 169  ; 0            ; |CORE                                                     ; CORE        ; work         ;
-;    |ACU:Acu|                         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|ACU:Acu                                             ; ACU         ; work         ;
-;    |ADDER:Add0|                      ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|ADDER:Add0                                          ; ADDER       ; work         ;
-;    |ADDER:Add1|                      ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|ADDER:Add1                                          ; ADDER       ; work         ;
-;    |ALU:Alu|                         ; 352 (352)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|ALU:Alu                                             ; ALU         ; work         ;
-;    |BRU:Bru|                         ; 43 (43)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|BRU:Bru                                             ; BRU         ; work         ;
-;    |ENPC:Enpc|                       ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|ENPC:Enpc                                           ; ENPC        ; work         ;
-;    |IMM_GEN:Imm_Generation|          ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|IMM_GEN:Imm_Generation                              ; IMM_GEN     ; work         ;
-;    |LSU:Lsu|                         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|LSU:Lsu                                             ; LSU         ; work         ;
-;    |MCU:Mcu|                         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|MCU:Mcu                                             ; MCU         ; work         ;
-;    |MUX_2_1:MuxA|                    ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|MUX_2_1:MuxA                                        ; MUX_2_1     ; work         ;
-;    |MUX_2_1:MuxB|                    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|MUX_2_1:MuxB                                        ; MUX_2_1     ; work         ;
-;    |MUX_4_1:Muxd|                    ; 57 (57)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|MUX_4_1:Muxd                                        ; MUX_4_1     ; work         ;
-;    |RCU:Rcu|                         ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|RCU:Rcu                                             ; RCU         ; work         ;
-;    |REG_FILE:Register_File|          ; 753 (0)             ; 992 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File                              ; REG_FILE    ; work         ;
-;       |DEMUX_1_32:Demux_Selector_Rd| ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|DEMUX_1_32:Demux_Selector_Rd ; DEMUX_1_32  ; work         ;
-;       |MUX_32_1:Mux_Output_R1|       ; 338 (338)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|MUX_32_1:Mux_Output_R1       ; MUX_32_1    ; work         ;
-;       |MUX_32_1:Mux_Output_R2|       ; 376 (376)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|MUX_32_1:Mux_Output_R2       ; MUX_32_1    ; work         ;
-;       |REG_NEG:Reg10|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg10                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg11|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg11                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg12|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg12                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg13|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg13                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg14|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg14                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg15|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg15                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg16|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg16                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg17|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg17                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg18|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg18                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg19|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg19                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg1|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg1                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg20|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg20                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg21|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg21                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg22|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg22                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg23|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg23                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg24|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg24                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg25|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg25                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg26|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg26                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg27|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg27                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg28|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg28                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg29|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg29                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg2|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg2                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg30|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg30                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg31|                ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg31                ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg3|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg3                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg4|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg4                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg5|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg5                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg6|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg6                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg7|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg7                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg8|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg8                 ; REG_NEG     ; work         ;
-;       |REG_NEG:Reg9|                 ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_FILE:Register_File|REG_NEG:Reg9                 ; REG_NEG     ; work         ;
-;    |REG_NEG:Iregister|               ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_NEG:Iregister                                   ; REG_NEG     ; work         ;
-;    |REG_NEG:Pc|                      ; 2 (2)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |CORE|REG_NEG:Pc                                          ; REG_NEG     ; work         ;
-;    |WSIGNAL:Wsignal|                 ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |CORE|WSIGNAL:Wsignal                                     ; WSIGNAL     ; work         ;
-+--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |AXI_RAM                   ; 6037 (6037)         ; 16448 (16448)             ; 0                 ; 0          ; 79   ; 0            ; |AXI_RAM            ; AXI_RAM     ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                    ;
-+--------------------------------------------------------------+----------------------------------------+
-; Register name                                                ; Reason for Removal                     ;
-+--------------------------------------------------------------+----------------------------------------+
-; REG_FILE:Register_File|REG_NEG:Reg0|Internal_Data_Reg[0..31] ; Stuck at GND due to stuck port data_in ;
-; ENPC:Enpc|Counter[1]                                         ; Lost fanout                            ;
-; Total Number of Removed Registers = 33                       ;                                        ;
-+--------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -353,569 +222,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1059  ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 30    ;
-; Number of registers using Asynchronous Clear ; 1057  ;
+; Total registers                              ; 16448 ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1024  ;
+; Number of registers using Clock Enable       ; 16416 ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |CORE|IMM_GEN:Imm_Generation|Selector0                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |CORE|IMM_GEN:Imm_Generation|Selector25                   ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |CORE|IMM_GEN:Imm_Generation|Selector25                   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CORE|ALU:Alu|ShiftLeft0                                  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |CORE|ALU:Alu|ShiftRight0                                 ;
-; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |CORE|ALU:Alu|ShiftRight0                                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CORE|ALU:Alu|ShiftLeft0                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CORE|ALU:Alu|ShiftLeft0                                  ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CORE|ALU:Alu|ShiftRight0                                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CORE|MUX_4_1:Muxd|Mux25                                  ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |CORE|MUX_4_1:Muxd|Mux7                                   ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |CORE|MUX_4_1:Muxd|Mux23                                  ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CORE|REG_FILE:Register_File|MUX_32_1:Mux_Output_R2|Mux28 ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |CORE|REG_FILE:Register_File|MUX_32_1:Mux_Output_R1|Mux8  ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |CORE|IMM_GEN:Imm_Generation|Selector6                    ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |CORE|IMM_GEN:Imm_Generation|Selector24                   ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |CORE|IMM_GEN:Imm_Generation|Selector18                   ;
-; 18:1               ; 12 bits   ; 144 LEs       ; 132 LEs              ; 12 LEs                 ; No         ; |CORE|ALU:Alu|Mux6                                        ;
-; 18:1               ; 12 bits   ; 144 LEs       ; 132 LEs              ; 12 LEs                 ; No         ; |CORE|ALU:Alu|Mux25                                       ;
-; 21:1               ; 4 bits    ; 56 LEs        ; 48 LEs               ; 8 LEs                  ; No         ; |CORE|ALU:Alu|Mux1                                        ;
-; 21:1               ; 3 bits    ; 42 LEs        ; 36 LEs               ; 6 LEs                  ; No         ; |CORE|ALU:Alu|Mux30                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |CORE ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |AXI_RAM ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; ADDR_WIDTH     ; 10    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_NEG:Iregister ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_NEG:Pc ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ADDER:Add0 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ADDER:Add1 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MUX_2_1:MuxB ;
-+------------------+-------+--------------------------------+
-; Parameter Name   ; Value ; Type                           ;
-+------------------+-------+--------------------------------+
-; INPUT_DATA_WIDTH ; 32    ; Signed Integer                 ;
-+------------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: IMM_GEN:Imm_Generation ;
-+----------------+---------+------------------------------------------+
-; Parameter Name ; Value   ; Type                                     ;
-+----------------+---------+------------------------------------------+
-; I_TYPE_0       ; 00Z0011 ; Unsigned Binary                          ;
-; JALR_TYPE      ; 1100111 ; Unsigned Binary                          ;
-; S_TYPE         ; 0100011 ; Unsigned Binary                          ;
-; B_TYPE         ; 1100011 ; Unsigned Binary                          ;
-; U_TYPE         ; 0Z10111 ; Unsigned Binary                          ;
-; J_TYPE         ; 1101111 ; Unsigned Binary                          ;
-+----------------+---------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|DEMUX_1_32:Demux_Selector_Rd ;
-+------------------+-------+-----------------------------------------------------------------------+
-; Parameter Name   ; Value ; Type                                                                  ;
-+------------------+-------+-----------------------------------------------------------------------+
-; INPUT_DATA_WIDTH ; 1     ; Unsigned Binary                                                       ;
-+------------------+-------+-----------------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|MUX_32_1:Mux_Output_R1 ;
-+------------------+-------+-----------------------------------------------------------------+
-; Parameter Name   ; Value ; Type                                                            ;
-+------------------+-------+-----------------------------------------------------------------+
-; INPUT_DATA_WIDTH ; 32    ; Signed Integer                                                  ;
-+------------------+-------+-----------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|MUX_32_1:Mux_Output_R2 ;
-+------------------+-------+-----------------------------------------------------------------+
-; Parameter Name   ; Value ; Type                                                            ;
-+------------------+-------+-----------------------------------------------------------------+
-; INPUT_DATA_WIDTH ; 32    ; Signed Integer                                                  ;
-+------------------+-------+-----------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg0 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg1 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg2 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg3 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg4 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg5 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg6 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg7 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg8 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg9 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg10 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg11 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg12 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg13 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg14 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg15 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg16 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg17 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg18 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg19 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg20 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg21 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg22 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg23 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg24 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg25 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg26 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg27 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg28 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg29 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg30 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_NEG:Reg31 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MUX_2_1:MuxA ;
-+------------------+-------+--------------------------------+
-; Parameter Name   ; Value ; Type                           ;
-+------------------+-------+--------------------------------+
-; INPUT_DATA_WIDTH ; 32    ; Signed Integer                 ;
-+------------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ALU:Alu ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer              ;
-; ADD            ; 0000  ; Unsigned Binary             ;
-; SUB            ; 0001  ; Unsigned Binary             ;
-; SLL            ; 0010  ; Unsigned Binary             ;
-; SLT            ; 0011  ; Unsigned Binary             ;
-; SLTU           ; 0100  ; Unsigned Binary             ;
-; XOR            ; 0101  ; Unsigned Binary             ;
-; SRL            ; 0110  ; Unsigned Binary             ;
-; SRA            ; 0111  ; Unsigned Binary             ;
-; OR             ; 1000  ; Unsigned Binary             ;
-; AND            ; 1001  ; Unsigned Binary             ;
-; BUFFB          ; 1010  ; Unsigned Binary             ;
-; BUFFA          ; 1011  ; Unsigned Binary             ;
-+----------------+-------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MUX_2_1:MuxC ;
-+------------------+-------+--------------------------------+
-; Parameter Name   ; Value ; Type                           ;
-+------------------+-------+--------------------------------+
-; INPUT_DATA_WIDTH ; 32    ; Signed Integer                 ;
-+------------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LSU:Lsu ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer              ;
-+----------------+-------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: MUX_4_1:Muxd ;
-+------------------+-------+--------------------------------+
-; Parameter Name   ; Value ; Type                           ;
-+------------------+-------+--------------------------------+
-; INPUT_DATA_WIDTH ; 32    ; Signed Integer                 ;
-+------------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------+
-; Port Connectivity Checks: "REG_FILE:Register_File|REG_NEG:Reg0" ;
-+----------------+-------+----------+-----------------------------+
-; Port           ; Type  ; Severity ; Details                     ;
-+----------------+-------+----------+-----------------------------+
-; REG_Data_InBUS ; Input ; Info     ; Stuck at GND                ;
-+----------------+-------+----------+-----------------------------+
-
-
-+---------------------------------------------------------------------------------+
-; Port Connectivity Checks: "REG_FILE:Register_File|DEMUX_1_32:Demux_Selector_Rd" ;
-+------------------+-------+----------+-------------------------------------------+
-; Port             ; Type  ; Severity ; Details                                   ;
-+------------------+-------+----------+-------------------------------------------+
-; DEMUX_Data_InBUS ; Input ; Info     ; Stuck at VCC                              ;
-+------------------+-------+----------+-------------------------------------------+
-
-
-+--------------------------------------------------------+
-; Port Connectivity Checks: "ADDER:Add0"                 ;
-+----------------------+-------+----------+--------------+
-; Port                 ; Type  ; Severity ; Details      ;
-+----------------------+-------+----------+--------------+
-; ADDER_A_inBUS[31..3] ; Input ; Info     ; Stuck at GND ;
-; ADDER_A_inBUS[1..0]  ; Input ; Info     ; Stuck at GND ;
-; ADDER_A_inBUS[2]     ; Input ; Info     ; Stuck at VCC ;
-+----------------------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
@@ -923,29 +247,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1059                        ;
-;     CLR               ; 33                          ;
-;     ENA CLR           ; 994                         ;
-;     ENA CLR SLD       ; 30                          ;
-;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 1406                        ;
-;     arith             ; 95                          ;
-;         1 data inputs ; 30                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 64                          ;
-;     extend            ; 44                          ;
-;         7 data inputs ; 44                          ;
-;     normal            ; 1267                        ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 49                          ;
-;         3 data inputs ; 88                          ;
-;         4 data inputs ; 131                         ;
-;         5 data inputs ; 144                         ;
-;         6 data inputs ; 854                         ;
-; boundary_port         ; 169                         ;
+; arriav_ff             ; 16448                       ;
+;     ENA               ; 16416                       ;
+;     SCLR              ; 32                          ;
+; arriav_lcell_comb     ; 6037                        ;
+;     normal            ; 6037                        ;
+;         3 data inputs ; 513                         ;
+;         4 data inputs ; 19                          ;
+;         6 data inputs ; 5505                        ;
+; boundary_port         ; 79                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.10                       ;
-; Average LUT depth     ; 12.35                       ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 4.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -954,7 +267,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:11     ;
+; Top            ; 00:00:10     ;
 +----------------+--------------+
 
 
@@ -964,9 +277,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Jul 21 14:45:06 2022
+    Info: Processing started: Tue Aug  9 09:41:30 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CORE-RISC-V -c CORE-RISC-V
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
+    Info (12023): Found entity 1: MCU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v
+    Info (12023): Found entity 1: IDU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v
     Info (12023): Found entity 1: LSU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
@@ -985,8 +302,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/k
     Info (12023): Found entity 1: IMM_GEN File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v
     Info (12023): Found entity 1: BRU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
-    Info (12023): Found entity 1: MCU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v
     Info (12023): Found entity 1: ACU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v
@@ -999,42 +314,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/k
     Info (12023): Found entity 1: CORE File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v
     Info (12023): Found entity 1: ADDER File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v Line: 22
-Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/RCU.v
-    Info (12023): Found entity 1: RCU File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/RCU.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ENPC.v
     Info (12023): Found entity 1: ENPC File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ENPC.v Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v
     Info (12023): Found entity 1: WSIGNAL File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/WSIGNAL.v Line: 22
-Info (12127): Elaborating entity "CORE" for the top level hierarchy
-Info (12128): Elaborating entity "REG_NEG" for hierarchy "REG_NEG:Iregister" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 148
-Info (12128): Elaborating entity "ENPC" for hierarchy "ENPC:Enpc" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 177
-Info (12128): Elaborating entity "ADDER" for hierarchy "ADDER:Add0" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 191
-Info (12128): Elaborating entity "MUX_2_1" for hierarchy "MUX_2_1:MuxB" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 218
-Info (12128): Elaborating entity "IMM_GEN" for hierarchy "IMM_GEN:Imm_Generation" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 229
-Info (12128): Elaborating entity "REG_FILE" for hierarchy "REG_FILE:Register_File" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 247
-Info (12128): Elaborating entity "DEMUX_1_32" for hierarchy "REG_FILE:Register_File|DEMUX_1_32:Demux_Selector_Rd" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v Line: 183
-Info (12128): Elaborating entity "MUX_32_1" for hierarchy "REG_FILE:Register_File|MUX_32_1:Mux_Output_R1" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v Line: 230
-Info (12128): Elaborating entity "WSIGNAL" for hierarchy "WSIGNAL:Wsignal" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 259
-Info (12128): Elaborating entity "ACU" for hierarchy "ACU:Acu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 290
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:Alu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 304
-Info (12128): Elaborating entity "JCU" for hierarchy "JCU:Jcu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 319
-Info (12128): Elaborating entity "BRU" for hierarchy "BRU:Bru" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 335
-Info (12128): Elaborating entity "LSU" for hierarchy "LSU:Lsu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 367
-Info (12128): Elaborating entity "MUX_4_1" for hierarchy "MUX_4_1:Muxd" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 384
-Info (12128): Elaborating entity "RCU" for hierarchy "RCU:Rcu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 405
-Info (12128): Elaborating entity "MCU" for hierarchy "MCU:Mcu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 427
+Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v
+    Info (12023): Found entity 1: AXI_RAM File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM_tb.v
+    Info (12023): Found entity 1: AXI_RAM_tb File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM_tb.v Line: 5
+Info (12127): Elaborating entity "AXI_RAM" for the top level hierarchy
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "Ram_Array" is uninferred due to asynchronous read logic File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v Line: 52
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2632 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
-    Info (21059): Implemented 103 output pins
-    Info (21061): Implemented 2463 logic cells
+Info (21057): Implemented 22532 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 45 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 22453 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 488 megabytes
-    Info: Processing ended: Thu Jul 21 14:45:24 2022
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Peak virtual memory: 573 megabytes
+    Info: Processing ended: Tue Aug  9 09:41:50 2022
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:32
 
 

@@ -30,7 +30,10 @@ INS_MEM_Address,
 INS_MEM_Data_In,
 
 //////////// OUTPUT //////////
-INS_MEM_Data_Out
+INS_MEM_Data_Out,
+INS_MEM_Read_Valid,
+INS_MEM_Write_Ready
+
 );
 
 //============================================================
@@ -42,16 +45,20 @@ input INS_MEM_Re;
 input INS_MEM_We;
 input [ADDR_WIDTH-1:0] INS_MEM_Address;
 input [31:0] INS_MEM_Data_In;
-output [31:0] INS_MEM_Data_Out;
+output reg [31:0] INS_MEM_Data_Out;
+output INS_MEM_Read_Valid;
+output INS_MEM_Write_Ready;
 
 //=======================================================
 //  REG/WIRE DECLARATIONS
 //=======================================================
 
 reg [31:0] Ram_Array[0:(2**(ADDR_WIDTH-2))-1];
-reg [31:0] Q_temp;
 wire [ADDR_WIDTH-1:0] Shift_Addr;
 reg [31:0] reg32_data;
+reg read_valid = 1'b0;
+reg write_ready = 1'b0;
+
 
 
 //============================================================
@@ -86,6 +93,24 @@ begin
 end
 
 
+
+always@(INS_MEM_Re,INS_MEM_We)
+begin
+	
+	if(INS_MEM_Re)
+		read_valid=1'b1;
+	else
+		read_valid=1'b0;
+		
+	
+	if(INS_MEM_We)
+		write_ready=1'b1;
+	else
+		write_ready=1'b0;
+
+end
+
+
 //============================================================
 // SEQUENTIAL LOGIC
 //============================================================
@@ -93,22 +118,26 @@ end
 always@(posedge INS_MEM_Clk)
 begin
 	
-	if(INS_MEM_We) begin
+	if(INS_MEM_We&write_ready) begin
 		Ram_Array[Shift_Addr]<=INS_MEM_Data_In;
 	end
 	
-	Q_temp<=Ram_Array[Shift_Addr];
+	if(INS_MEM_Re&read_valid) begin
+		INS_MEM_Data_Out<=Ram_Array[Shift_Addr];
+	end
+	
+	else begin
+		INS_MEM_Data_Out<=32'b0;
+	end
 	
 end
 
 
 assign Shift_Addr=INS_MEM_Address>>2;
+assign INS_MEM_Read_Valid=read_valid;
+assign INS_MEM_Write_Ready=write_ready;
 
-//============================================================
-// COMBINATIONAL OUTPUT LOGIC
-//============================================================
 
-assign INS_MEM_Data_Out = INS_MEM_Re == 1'b1 ? Q_temp : 32'd0;
 
 
 endmodule
