@@ -60,7 +60,7 @@ wire data_mem_write_ready;
 
 /* Device Under Test (DUT) instantiation */
 
-CORE #(.DATAWIDTH(DATAWIDTH)) RiscCore(
+CORE #(.RESET_ADDR(32'h0000_0000)) RiscCore(
 
 
 ///// Clk/Reset ////

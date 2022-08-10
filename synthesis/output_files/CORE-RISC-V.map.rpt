@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CORE-RISC-V
-Tue Aug  9 10:43:26 2022
+Tue Aug  9 14:39:10 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -98,7 +98,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Aug  9 10:43:26 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Aug  9 14:39:10 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; CORE-RISC-V                                 ;
 ; Top-level Entity Name           ; CORE                                        ;
@@ -410,31 +410,33 @@ Encoding Type:  One-Hot
 
 +----------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |CORE ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; DATAWIDTH      ; 32    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
++----------------+----------------------------------+------------------+
+; Parameter Name ; Value                            ; Type             ;
++----------------+----------------------------------+------------------+
+; RESET_ADDR     ; 00000000000000000000000000000000 ; Unsigned Binary  ;
++----------------+----------------------------------+------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_NEG:Iregister ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: REG_NEG:Iregister      ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer  ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: REG_POS:Pc ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: REG_POS:Pc             ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer  ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -525,321 +527,353 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg0 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg1 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg2 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg3 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg4 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg5 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg6 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg7 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg8 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg9 ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++----------------+----------------------------------+------------------------------+
+; Parameter Name ; Value                            ; Type                         ;
++----------------+----------------------------------+------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer               ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary              ;
++----------------+----------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg10 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg11 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg12 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg13 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg14 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg15 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg16 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg17 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg18 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg19 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg20 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg21 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg22 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg23 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg24 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg25 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg26 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg27 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg28 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg29 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg30 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: REG_FILE:Register_File|REG_POS:Reg31 ;
-+----------------+-------+----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                     ;
-+----------------+-------+----------------------------------------------------------+
-; REG_DATA_WIDTH ; 32    ; Signed Integer                                           ;
-+----------------+-------+----------------------------------------------------------+
++----------------+----------------------------------+-------------------------------+
+; Parameter Name ; Value                            ; Type                          ;
++----------------+----------------------------------+-------------------------------+
+; REG_DATA_WIDTH ; 32                               ; Signed Integer                ;
+; RESET_VALUE    ; 00000000000000000000000000000000 ; Unsigned Binary               ;
++----------------+----------------------------------+-------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -987,7 +1021,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Aug  9 10:43:05 2022
+    Info: Processing started: Tue Aug  9 14:38:49 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CORE-RISC-V -c CORE-RISC-V
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
@@ -1052,8 +1086,8 @@ Info (21057): Implemented 2651 device resources after synthesis - the final reso
     Info (21059): Implemented 103 output pins
     Info (21061): Implemented 2479 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 491 megabytes
-    Info: Processing ended: Tue Aug  9 10:43:26 2022
+    Info: Peak virtual memory: 484 megabytes
+    Info: Processing ended: Tue Aug  9 14:39:10 2022
     Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:35
 

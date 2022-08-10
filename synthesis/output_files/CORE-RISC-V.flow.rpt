@@ -1,5 +1,5 @@
 Flow report for CORE-RISC-V
-Tue Aug  9 10:43:26 2022
+Tue Aug  9 14:39:10 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Aug  9 10:43:26 2022       ;
+; Flow Status                     ; Successful - Tue Aug  9 14:39:10 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; CORE-RISC-V                                 ;
 ; Top-level Entity Name           ; CORE                                        ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/09/2022 10:43:05 ;
+; Start date & time ; 08/09/2022 14:38:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; CORE-RISC-V         ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 237751135144766.166005978519008        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 237751135144766.166007392927165        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -105,8 +105,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 491 MB              ; 00:00:35                           ;
-; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:35                           ;
+; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 481 MB              ; 00:00:34                           ;
+; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

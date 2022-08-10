@@ -1,11 +1,4 @@
-/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_NEG
-
-Top level modules:
-	REG_NEG
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v
+/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module AXI_RAM
 
@@ -53,20 +46,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	MUX_4_1
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CORE_tb
-
-Top level modules:
-	CORE_tb
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_POS
-
-Top level modules:
-	REG_POS
 
 } {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

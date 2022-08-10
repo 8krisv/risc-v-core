@@ -19,7 +19,7 @@
 //#
 //########################################################################*/
 
-module CORE #(parameter DATAWIDTH=32)(
+module CORE #(parameter [31:0] RESET_ADDR = 32'h0000_0000)(
 
 ///// inputs /////
 CORE_Clk_In,
@@ -44,6 +44,13 @@ CORE_Datamem_Addr_OutBUS
 
 
 //============================================================
+//  PARAMETER DECLARATIONS
+//============================================================
+
+localparam INSMEMSTEP = 32'd4;
+localparam DATAWIDTH=32;
+
+//============================================================
 //  PORT DECLARATIONS
 //============================================================
 
@@ -63,16 +70,9 @@ output [DATAWIDTH-1:0] CORE_Datamem_Writedata_outBUS;
 output [DATAWIDTH-1:0] CORE_Datamem_Addr_OutBUS;
 
 
-//============================================================
-//  PARAMETER DECLARATIONS
-//============================================================
-
-localparam INSMEMSTEP = 32'd4;
-
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-
 
 wire [DATAWIDTH-1:0] Pc_Addr_OutBUS_Wire;
 wire [DATAWIDTH-1:0] Add1_Rest_OutBUS_Wire;
@@ -136,7 +136,7 @@ wire Mcu_RegFile_Reset_Wire;
 
 /*Instruction register instantiation*/
 
-REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH)) Iregister (
+REG_NEG #(.REG_DATA_WIDTH(DATAWIDTH), .RESET_VALUE(RESET_ADDR) ) Iregister (
 
 //////////// INPUTS //////////
 .REG_Clk(CORE_Clk_In),

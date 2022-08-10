@@ -20,7 +20,7 @@
 //#
 //########################################################################*/
 
-module REG_POS #(parameter REG_DATA_WIDTH=32)(
+module REG_POS #(parameter REG_DATA_WIDTH=32, parameter [REG_DATA_WIDTH-1:0] RESET_VALUE= 32'h00000000)(
 
 //////////// INPUTS //////////
 REG_Clk,
@@ -65,7 +65,7 @@ end
 always@(posedge REG_Clk or negedge REG_Reset)
 begin
 	if(!REG_Reset)
-		Internal_Data_Reg<=0;
+		Internal_Data_Reg<=RESET_VALUE;
 	else
 		Internal_Data_Reg<=Internal_Signal_Reg;
 end
