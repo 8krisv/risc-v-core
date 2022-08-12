@@ -3,3 +3,5 @@
 *.out
 *.bin
 *.txt
+testcases/*
+!/testcases/finonacci.asm
