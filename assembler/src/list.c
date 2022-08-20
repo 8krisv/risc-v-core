@@ -17,6 +17,10 @@
 //#
 //########################################################################*/
 
+/* 
+Linked list implementation and core functions
+*/
+
 
 #include <stdlib.h>
 #include <string.h>

@@ -358,8 +358,9 @@ MUX_4_1 #(.INPUT_DATA_WIDTH(DATAWIDTH)) Muxd(
 );
 
 
-/*Main control unit*/
-MCU Mcu(
+/*** Main control unit instantiation ****/
+
+MCU Mcu( // State machine
 
 ///// inputs /////
 .MCU_Clk(CORE_Clk_In),
@@ -382,10 +383,7 @@ MCU Mcu(
 
 );
 
-
-/*Instruction decode unit instantiation*/
-
-IDU IDU(
+IDU IDU( // Decoder 
 
 //// inputs ////
 .IDU_Opcode_InBUS(Opcode_InBUS_Wire),
@@ -400,8 +398,8 @@ IDU IDU(
 .IDU_Bru_En(Idu_Bru_En_Wire),
 .IDU_Alu_Select_Immediate_Mux(Idu_Alu_Select_Immediate_Mux_Wire),
 .IDU_Lsu_En(Idu_Lsu_En_Wire)
-
 );
+/*** End of Main control unit instantiation ****/
 
 
 assign Core_Insmem_Addr_OutBUS = Pc_Addr_OutBUS_Wire;

@@ -17,9 +17,11 @@
 //#
 //########################################################################*/
 
+/* 
+binary search tree data structure implementation and core functions
+*/
+
 #include "../include/bst.h"
-
-
 
 /*static function prototypes*/
 static bst* _new_node(char* key, void* data_ptr);

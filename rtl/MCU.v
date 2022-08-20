@@ -50,7 +50,7 @@ MCU_Datamem_Valid_Out
 localparam [2:0] State_reset			   = 3'b000;
 localparam [2:0] State_Wait			   = 3'b001;
 localparam [2:0] State_Fetch           = 3'b010;
-localparam [2:0] State_Decode	         = 3'b011;
+localparam [2:0] State_Exec	         = 3'b011;
 localparam [2:0] State_Wait_Valid   	= 3'b100;
 localparam [2:0] State_Wait_Ready  		= 3'b101;
 
@@ -59,7 +59,7 @@ localparam LOAD 			= 8'b0000011;
 localparam STORE 			= 8'b0100011;
 
 //=======================================================
-//  PORT declarationsState_Feeding
+//  PORT declarations
 //=======================================================
 
 input MCU_Clk;
@@ -118,7 +118,7 @@ begin
 				end
 			
 				default:
-					State_Signal=State_Decode;
+					State_Signal=State_Exec;
 							
 			endcase
 			
@@ -126,18 +126,18 @@ begin
 	
 	
 	State_Wait_Valid: if(MCU_Datamem_Valid_In)
-								State_Signal=State_Decode;
+								State_Signal=State_Exec;
 							else
 								State_Signal=State_Wait_Valid;
 	
 	
 	State_Wait_Ready: if(MCU_Datamem_Ready_In)
-								State_Signal=State_Decode;
+								State_Signal=State_Exec;
 							else
 								State_Signal=State_Wait_Ready;
 	
 	
-	State_Decode:State_Signal=State_Wait;
+	State_Exec:State_Signal=State_Wait;
 
 	
 	default: State_Signal =State_reset;
@@ -206,7 +206,7 @@ begin
 		end
 		
 		
-		State_Decode:
+		State_Exec:
 		begin
 			MCU_Pc_Reset=1'b0; 
 			MCU_Enpc_Set=1'b1;

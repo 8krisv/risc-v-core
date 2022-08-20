@@ -75,7 +75,7 @@ localparam TYPE_B    = 8'b1100011;
 localparam LS 			= 8'b0?00011;
 localparam RI        = 8'b0?10011;
 
-localparam [2:0] State_Decode	               = 3'b011;
+localparam [2:0] State_Exec	               = 3'b011;
 localparam [2:0] State_Wait_Valid_Ready   	= 3'b10?;
 
 
@@ -94,7 +94,7 @@ begin
 
 	casex(IDU_Mcu_State)
 	
-		State_Decode:
+		State_Exec:
 		begin
 		
 			casex(IDU_Opcode_InBUS)
