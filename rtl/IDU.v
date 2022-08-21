@@ -69,11 +69,11 @@ output reg IDU_Lsu_En;
 //  PARAMETER DECLARATIONS
 //============================================================
 
-localparam LUI_AUIPC = 8'b0?10111; 
-localparam JAL_JALR  = 8'b110?111;
-localparam TYPE_B    = 8'b1100011;
-localparam LS 			= 8'b0?00011;
-localparam RI        = 8'b0?10011;
+localparam LUI_AUIPC = 7'b0?10111; 
+localparam JAL_JALR  = 7'b110?111;
+localparam TYPE_B    = 7'b1100011;
+localparam LS 			= 7'b0?00011;
+localparam RI        = 7'b0?10011;
 
 localparam [2:0] State_Exec	               = 3'b011;
 localparam [2:0] State_Wait_Valid_Ready   	= 3'b10?;

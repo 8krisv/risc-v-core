@@ -26,74 +26,7 @@
 # 23 compiles, 0 failed with no errors.
 vsim work.CORE_tb
 # vsim work.CORE_tb 
-# Start time: 14:56:41 on Aug 20,2022
-# Loading sv_std.std
-# Loading work.CORE_tb
-# Loading work.CORE
-# Loading work.REG_NEG
-# Loading work.REG_POS
-# Loading work.ADDER
-# Loading work.MUX_2_1
-# Loading work.IMM_GEN
-# Loading work.REG_FILE
-# Loading work.DEMUX_1_32
-# Loading work.MUX_32_1
-# Loading work.ACU
-# Loading work.ALU
-# Loading work.JCU
-# Loading work.BRU
-# Loading work.LSU
-# Loading work.MUX_4_1
-# Loading work.MCU
-# Loading work.IDU
-# Loading work.INS_MEM
-# Loading work.DATAMEM
-do CORE.do
-# ** UI-Msg: (vish-4014) No objects found matching '/CORE_tb/RiscCore/CORE_Insmem_Valid_in'.
-# Executing ONERROR command at macro ./CORE.do line 22
-# ** UI-Msg: (vish-4014) No objects found matching '/CORE_tb/RiscCore/CORE_datamem_Valid_in'.
-# Executing ONERROR command at macro ./CORE.do line 23
-run -all
-# Loading Instruction Memory...
-# Ram successfully loaded.
-# Initializig Data Memory...
-# Data Memory successfully loaded.
-# Total clock cycles:        242
-# ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
-#    Time: 4880 ns  Iteration: 1  Instance: /CORE_tb
-# Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
-add wave -position 20  sim:/CORE_tb/RiscCore/Register_File/Reg13_Output
-add wave -position 21  sim:/CORE_tb/RiscCore/Register_File/Reg14_Output
-add wave -position 22  sim:/CORE_tb/RiscCore/Register_File/Reg15_Output
-restart -f
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run -all
-# Loading Instruction Memory...
-# Ram successfully loaded.
-# Initializig Data Memory...
-# Data Memory successfully loaded.
-# Total clock cycles:        242
-# ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
-#    Time: 4880 ns  Iteration: 1  Instance: /CORE_tb
-# Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
-add wave -position 27  sim:/CORE_tb/data_mem/DATAMEM_Data_In
-restart -f
-run -all
-# Loading Instruction Memory...
-# Ram successfully loaded.
-# Initializig Data Memory...
-# Data Memory successfully loaded.
-# Total clock cycles:        242
-# ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
-#    Time: 4880 ns  Iteration: 1  Instance: /CORE_tb
-# Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/simulation/CORE.do
-quit -sim
-# End time: 15:59:34 on Aug 20,2022, Elapsed time: 1:02:53
-# Errors: 0, Warnings: 1
-vsim work.CORE_tb
-# vsim work.CORE_tb 
-# Start time: 15:59:39 on Aug 20,2022
+# Start time: 11:40:15 on Aug 21,2022
 # Loading sv_std.std
 # Loading work.CORE_tb
 # Loading work.CORE
@@ -121,51 +54,9 @@ run -all
 # Ram successfully loaded.
 # Initializig Data Memory...
 # Data Memory successfully loaded.
-# Total clock cycles:        242
+# Total clock cycles:        597
 # ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
-#    Time: 4880 ns  Iteration: 1  Instance: /CORE_tb
+#    Time: 11980 ns  Iteration: 1  Instance: /CORE_tb
 # Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/simulation/CORE.do
-# Load canceled
-# Load canceled
-# Load canceled
-quit -sim
-# End time: 16:41:05 on Aug 20,2022, Elapsed time: 0:41:26
-# Errors: 0, Warnings: 1
-# Load canceled
-vsim work.CORE_tb
-# vsim work.CORE_tb 
-# Start time: 16:42:22 on Aug 20,2022
-# Loading sv_std.std
-# Loading work.CORE_tb
-# Loading work.CORE
-# Loading work.REG_NEG
-# Loading work.REG_POS
-# Loading work.ADDER
-# Loading work.MUX_2_1
-# Loading work.IMM_GEN
-# Loading work.REG_FILE
-# Loading work.DEMUX_1_32
-# Loading work.MUX_32_1
-# Loading work.ACU
-# Loading work.ALU
-# Loading work.JCU
-# Loading work.BRU
-# Loading work.LSU
-# Loading work.MUX_4_1
-# Loading work.MCU
-# Loading work.IDU
-# Loading work.INS_MEM
-# Loading work.DATAMEM
-do CORE.do
-run -all
-# Loading Instruction Memory...
-# Ram successfully loaded.
-# Initializig Data Memory...
-# Data Memory successfully loaded.
-# Total clock cycles:        242
-# ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
-#    Time: 4880 ns  Iteration: 1  Instance: /CORE_tb
-# Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
-# End time: 17:31:42 on Aug 20,2022, Elapsed time: 0:49:20
-# Errors: 0, Warnings: 1
+# End time: 12:15:47 on Aug 21,2022, Elapsed time: 0:35:32
+# Errors: 0, Warnings: 2
