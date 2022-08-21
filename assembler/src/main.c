@@ -770,6 +770,12 @@ void compile(list** sym_table, int size, char* output_name, int show_mem_flag){
                 fprintf(text,"0x%08x:\t%08x\t: %s ",j*4, compile_instructions[j] ,sym_table[i]->lexeme);
             }
 
+            else if(opcode==0x37 || opcode == 0x17){ // lui/auipc
+
+                fprintf(text,"0x%08x:\t%08x\t: %s %s 0x%08x\n",j*4,compile_instructions[j],sym_table[i]->lexeme,sym_table[i]->next->lexeme,sym_table[i]->next->next->value);
+
+            }
+
             else{
                 fprintf(text,"0x%08x:\t%08x\t: %s %s %s %s\n",j*4,compile_instructions[j],sym_table[i]->lexeme,sym_table[i]->next->lexeme,sym_table[i]->next->next->lexeme,sym_table[i]->next->next->next->lexeme);
             }
@@ -857,7 +863,6 @@ int main(int argc, char** argv){
     sym_table=syntax_analysis(sym_table,label_bst,stderr_buff,&ninstr);
     /*there was one or more errors in the sintax analysis stage*/
     error(stderr_buff);
-
 
     /*compilation stage*/
     compile(sym_table,ninstr,buffname,show_mem_flag);

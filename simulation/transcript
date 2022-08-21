@@ -1,5 +1,6 @@
 # reading modelsim.ini
 # Loading project core_simulation
+# Load canceled
 # Compile of ACU.v was successful.
 # Compile of ADDER.v was successful.
 # Compile of ALU.v was successful.
@@ -26,7 +27,7 @@
 # 23 compiles, 0 failed with no errors.
 vsim work.CORE_tb
 # vsim work.CORE_tb 
-# Start time: 11:40:15 on Aug 21,2022
+# Start time: 15:59:04 on Aug 21,2022
 # Loading sv_std.std
 # Loading work.CORE_tb
 # Loading work.CORE
@@ -58,5 +59,81 @@ run -all
 # ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
 #    Time: 11980 ns  Iteration: 1  Instance: /CORE_tb
 # Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
-# End time: 12:15:47 on Aug 21,2022, Elapsed time: 0:35:32
+quit -sim
+# End time: 15:59:38 on Aug 21,2022, Elapsed time: 0:00:34
 # Errors: 0, Warnings: 2
+# reading modelsim.ini
+# reading modelsim.ini
+# Loading project core_simulation
+# Load canceled
+# Compile of ACU.v was successful.
+# Compile of ADDER.v was successful.
+# Compile of ALU.v was successful.
+# Compile of BRU.v was successful.
+# Compile of CORE.v was successful.
+# Compile of DATAMEM.sv was successful.
+# Compile of DEMUX_1_32.v was successful.
+# Compile of IDU.v was successful.
+# Compile of IMM_GEN.v was successful.
+# Compile of IMRD.v was successful.
+# Compile of INS_MEM.sv was successful.
+# Compile of JCU.v was successful.
+# Compile of LSU.v was successful.
+# Compile of MCU.v was successful.
+# Compile of MUX_2_1.v was successful.
+# Compile of MUX_4_1.v was successful.
+# Compile of MUX_32_1.v was successful.
+# Compile of REG_FILE.v was successful.
+# Compile of REG_NEG.v was successful.
+# Compile of REG_POS.v was successful.
+# Compile of CORE_tb.sv was successful.
+# Compile of AXI_RAM_tb.v was successful.
+# Compile of AXI_RAM.v was successful.
+# 23 compiles, 0 failed with no errors.
+vsim work.CORE_tb
+# vsim work.CORE_tb 
+# Start time: 16:00:26 on Aug 21,2022
+# Loading sv_std.std
+# Loading work.CORE_tb
+# Loading work.CORE
+# Loading work.REG_NEG
+# Loading work.REG_POS
+# Loading work.ADDER
+# Loading work.MUX_2_1
+# Loading work.IMM_GEN
+# Loading work.REG_FILE
+# Loading work.DEMUX_1_32
+# Loading work.MUX_32_1
+# Loading work.ACU
+# Loading work.ALU
+# Loading work.JCU
+# Loading work.BRU
+# Loading work.LSU
+# Loading work.MUX_4_1
+# Loading work.MCU
+# Loading work.IDU
+# Loading work.INS_MEM
+# Loading work.DATAMEM
+do CORE.do
+run -all
+# Loading Instruction Memory...
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "../testcases/test.bin" for reading.
+# No such file or directory. (errno = ENOENT)    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv(90)
+#    Time: 0 ps  Iteration: 0  Instance: /CORE_tb/ins_mem
+# ** Error (suppressible): (vsim-PLI-3084) $fread : Argument 2 is not a valid file descriptor.
+#    Time: 0 ps  Iteration: 0  Process: /CORE_tb/ins_mem/#INITIAL#87 File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv Line: 74
+# Ram successfully loaded.
+# Initializig Data Memory...
+# Data Memory successfully loaded.
+# Warning clock cycles limit has been reached
+# Total clock cycles:       5000
+# ** Note: $stop    : /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv(167)
+#    Time: 100040 ns  Iteration: 1  Instance: /CORE_tb
+# Break in Module CORE_tb at /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv line 167
+quit -sim
+# End time: 16:02:19 on Aug 21,2022, Elapsed time: 0:01:53
+# Errors: 1, Warnings: 3
+cd /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/simulation
+# reading modelsim.ini
+# reading modelsim.ini
+# Loading project core_simulation
