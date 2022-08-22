@@ -178,7 +178,7 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
     int immediate;
     char* enptr;
     char* reg;
-         
+
     token = strtok_r(linecopy,delimiter,&save_pointer);
 
 
@@ -190,12 +190,13 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
             break;
         }
 
-       
+        label=strdup(token);
+
         /*first token of the new line*/
         if (i==0){
 
-
-            node = search_node(ops_bst,token);
+            
+            node = search_node(ops_bst,label);
                         
             /*token is a function*/
             if (node!=NULL){
@@ -206,7 +207,6 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
 
             else if(token[strlen(token)-1]==':'){
 
-                label=strdup(token);
                 label[strlen(token)-1]='\0';
                 
                 if ((node=search_node(*label_bst,label)) != NULL){
@@ -224,7 +224,6 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
                     *label_bst=insert_node(*label_bst,new_label->lexeme,(void*)new_label);
                     *compile_line= *compile_line-1;
                 }
-                free(label);
             }
 
             else{
@@ -239,7 +238,7 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
 
         else{
             
-            node =search_node(regs_bst,token);
+            node =search_node(regs_bst,label);
 
             /*token is a register*/
             if (node!=NULL){
@@ -284,9 +283,11 @@ static list* get_row_sym_table( bst* ops_bst, bst* regs_bst,bst** label_bst, cha
                 
         }
 
+        free(label);
         token = strtok_r(NULL,delimiter,&save_pointer);
         i++;
     }
+
 
     free(linecopy);
     *compile_line= *compile_line+1;
