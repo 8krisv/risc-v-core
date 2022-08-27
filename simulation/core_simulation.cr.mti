@@ -1,162 +1,127 @@
-/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_NEG
-
-Top level modules:
-	REG_NEG
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module AXI_RAM
-
-Top level modules:
-	AXI_RAM
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ACU
-
-Top level modules:
-	ACU
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IDU
-
-Top level modules:
-	IDU
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ALU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ALU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ALU
-
-Top level modules:
-	ALU
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MUX_2_1
-
-Top level modules:
-	MUX_2_1
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IMM_GEN
-
-Top level modules:
-	IMM_GEN
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module MUX_4_1
-
-Top level modules:
-	MUX_4_1
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CORE_tb
-
-Top level modules:
-	CORE_tb
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_POS
-
-Top level modules:
-	REG_POS
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module DEMUX_1_32
-
-Top level modules:
-	DEMUX_1_32
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module ADDER
-
-Top level modules:
-	ADDER
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module CORE
-
-Top level modules:
-	CORE
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module BRU
-
-Top level modules:
-	BRU
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module JCU
-
-Top level modules:
-	JCU
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module INS_MEM
-
-Top level modules:
-	INS_MEM
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/AXI_RAM_tb.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/AXI_RAM_tb.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module AXI_RAM_tb
-
-Top level modules:
-	AXI_RAM_tb
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module DATAMEM
-
-Top level modules:
-	DATAMEM
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMRD.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMRD.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module IMRD
-
-Top level modules:
-	IMRD
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v
+/home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/LSU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/LSU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module LSU
 
 Top level modules:
 	LSU
 
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module REG_FILE
-
-Top level modules:
-	REG_FILE
-
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MCU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MCU.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MCU
 
 Top level modules:
 	MCU
 
-} {} {}} /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/REG_NEG.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/REG_NEG.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module REG_NEG
+
+Top level modules:
+	REG_NEG
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/DEMUX_1_32.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/DEMUX_1_32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DEMUX_1_32
+
+Top level modules:
+	DEMUX_1_32
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/CORE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/CORE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module CORE
+
+Top level modules:
+	CORE
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/AXI_RAM.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/AXI_RAM.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module AXI_RAM
+
+Top level modules:
+	AXI_RAM
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MUX_2_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MUX_2_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MUX_2_1
+
+Top level modules:
+	MUX_2_1
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/INS_MEM.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/INS_MEM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module INS_MEM
+
+Top level modules:
+	INS_MEM
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/DATAMEM.sv {1 {vlog -work work -sv -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/DATAMEM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DATAMEM
+
+Top level modules:
+	DATAMEM
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/IMM_GEN.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/IMM_GEN.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IMM_GEN
+
+Top level modules:
+	IMM_GEN
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/IMRD.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/IMRD.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module IMRD
+
+Top level modules:
+	IMRD
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MUX_4_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MUX_4_1.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MUX_4_1
+
+Top level modules:
+	MUX_4_1
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/REG_FILE.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/REG_FILE.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module REG_FILE
+
+Top level modules:
+	REG_FILE
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MUX_32_1.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/MUX_32_1.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module MUX_32_1
 
 Top level modules:
 	MUX_32_1
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/REG_POS.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/REG_POS.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module REG_POS
+
+Top level modules:
+	REG_POS
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/ADDER.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/ADDER.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ADDER
+
+Top level modules:
+	ADDER
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/BRU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/BRU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module BRU
+
+Top level modules:
+	BRU
+
+} {} {}} /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/JCU.v {1 {vlog -work work -stats=none /home/krisv/Documentos/maestria/Arquitectura/coffeebrain/risc-v-core/rtl/JCU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module JCU
+
+Top level modules:
+	JCU
 
 } {} {}}

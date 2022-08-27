@@ -624,6 +624,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "CORE_Insmem_Readdata_InBUS[25]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[30]",
+					"strict" : false
+				},
+				{
+					"name" : "CORE_Insmem_Readdata_InBUS[31]",
+					"strict" : false
+				},
+				{
 					"name" : "CORE_Insmem_Readdata_InBUS[7]",
 					"strict" : false
 				},
@@ -648,14 +660,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "CORE_Insmem_Readdata_InBUS[31]",
-					"strict" : false
-				},
-				{
-					"name" : "CORE_Insmem_Readdata_InBUS[30]",
-					"strict" : false
-				},
-				{
 					"name" : "CORE_Insmem_Readdata_InBUS[29]",
 					"strict" : false
 				},
@@ -669,10 +673,6 @@
 				},
 				{
 					"name" : "CORE_Insmem_Readdata_InBUS[8]",
-					"strict" : false
-				},
-				{
-					"name" : "CORE_Insmem_Readdata_InBUS[25]",
 					"strict" : false
 				},
 				{

@@ -51,7 +51,18 @@ char get_funct7_r_type(char* opname){
     {
         return 0x20;
     }
-    return 0x0;
+
+    /********** Student code here **********/
+    
+    /* return the correct funct7 value if it 
+    is a mul instruction*/
+    
+
+
+    /********** End of Student code **********/
+    else{
+        return 0x0;
+    }
 };
 
 char get_type_instruction(char opcode){
@@ -601,7 +612,6 @@ int get_compiled_instruction(list* head){
 
         union i_type instruction_i;
 
-        /*load instructions*/
 
         instruction_i.istruct.opcode =OP_OPCODES[head->value];
         instruction_i.istruct.rd =  head->next->value;
@@ -613,6 +623,7 @@ int get_compiled_instruction(list* head){
             /* code */
             instruction_i.istruct.rs1=head->next->next->next->value;
             instruction_i.istruct.immediate_11_0=head->next->next->value&0x00000fff;
+            
         }
 
         //slli, srli ,srai
@@ -631,11 +642,16 @@ int get_compiled_instruction(list* head){
             }
         }
 
+
+
         else{
 
             instruction_i.istruct.rs1=head->next->next->value;    
             instruction_i.istruct.immediate_11_0=head->next->next->next->value&0x00000fff;
+
         }
+
+        
         return instruction_i.instruction;
     }
 

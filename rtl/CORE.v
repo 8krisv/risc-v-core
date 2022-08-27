@@ -255,8 +255,8 @@ ACU Acu(
 
 .ACU_AluOP_InBUS(Idu_AluOp_OutBUS_Wire),
 .ACU_Funt3_InBUS(Funct3_InBUS_Wire),
-.ACU_Funt7_b5(Funct7_InBUS_Wire[5]), /*bit 5 of the funct7 field*/
-.ACU_Opcode_b5(Opcode_InBUS_Wire[5]), /*bit 5 of the opcode field*/
+.ACU_Funt7_InBUS(Funct7_InBUS_Wire), /*bit 5 of the funct7 field*/
+.ACU_Opcode_InBUS(Opcode_InBUS_Wire), /*bit 5 of the opcode field*/
 
 //// outputs ///
 .ACU_AluControl_OutBUS(Acu_AluControl_OutBUS_Wire)

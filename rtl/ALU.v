@@ -53,8 +53,10 @@ Out
 //  PARAMETER DECLARATIONS
 //============================================================
 
+// Datawidth
 parameter DATAWIDTH=32;
 
+// Alu Opcodes
 parameter  ADD   = 4'b0000,
 			  SUB   = 4'b0001,
 			  SLL   = 4'b0010,
@@ -67,6 +69,18 @@ parameter  ADD   = 4'b0000,
 			  AND   = 4'b1001,
 			  BUFFB = 4'b1010,
 			  BUFFA = 4'b1011;
+			  
+/******** Student code here ********/
+
+/* You must complete with the Alu Opcode
+for the new multiplication instruction*/
+
+
+
+
+
+			  
+/******** End of student code ********/
 
 //============================================================
 //  PORT DECLARATIONS
@@ -82,12 +96,42 @@ output[DATAWIDTH-1:0] Out;
 //=======================================================
 
 reg [DATAWIDTH-1:0] tmp;
+reg [63:0] tmp_mult_op;
 
 //============================================================
 // COMBINATIONAL LOGIC
 //============================================================
 
-always @(Operand_1,Operand_2,Opcode)
+// combinational logic for the new multiplication instructions
+always @(Operand_1,Operand_2,Opcode) 
+begin
+
+	/******** Student code here ********/
+	
+	/*Combinational logic for the multiplication
+	instruction, you must save the multiplication
+   result in the 64 bit register tmp_mult_op */
+	
+	/*
+	HINT:
+	
+		case(...)
+			
+			value0: tmp_mult_op = ...;
+			...
+			default: tmp_mult_op = ...;
+		
+		endcase
+		
+	*/
+	
+	
+  /******** End of student code ********/
+  
+end
+
+
+always @(tmp_mult_op,Operand_1,Operand_2,Opcode)
 begin
 
 	case(Opcode)
@@ -103,6 +147,23 @@ begin
 		AND: tmp = Operand_1&Operand_2;	
 		BUFFB: tmp= Operand_2;
 		BUFFA: tmp= Operand_1;
+		
+		/******** Student code here ********/
+		
+		/* you must set the value of the tmp 
+		register according to the value of the 
+		tmp_mult_op register and the Alu Opcode
+		for the multiplication instruction*/
+		
+		/*
+		HINT:
+	
+			value0: tmp = tmp_mult_op[..];
+			...
+		
+		*/
+		
+	   /******** End of student code ********/
 		
 		default tmp= 32'd0;
 		

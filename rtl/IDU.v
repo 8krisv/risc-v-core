@@ -73,7 +73,9 @@ localparam LUI_AUIPC = 7'b0?10111;
 localparam JAL_JALR  = 7'b110?111;
 localparam TYPE_B    = 7'b1100011;
 localparam LS 			= 7'b0?00011;
-localparam RI        = 7'b0?10011;
+localparam I_OP      = 7'b0010011; // ADDI,SLTI,SLTIU,XORI,ORI,ANDI,SLLI,SRLI,SRAI
+localparam R_MULT		= 7'b0110011; // R-TYPE/MUL Instructions
+
 
 localparam [2:0] State_Exec	               = 3'b011;
 localparam [2:0] State_Wait_Valid_Ready   	= 3'b10?;
@@ -145,17 +147,34 @@ begin
 					IDU_Lsu_En = 1'b1;	
 				end
 	
-				RI:
+				I_OP:
 				begin
 					IDU_Not_Branch_Jump_Op = 1'b0;
 					IDU_RegFile_Mux_OutBUS = 2'b00;
 					IDU_RegFile_Write = 1'b1;
 					IDU_AluOp_OutBUS = 2'b00;
 					IDU_Bru_En = 1'b0;
-					IDU_Alu_Select_Immediate_Mux = ~Lui_Store_TypeR_Op;
+					IDU_Alu_Select_Immediate_Mux = 1'b1;
 					IDU_Lsu_En = 1'b0;	
 				end
-		
+				
+				
+				R_MULT:  // R-TYPE/MUL Instructions
+				begin
+				
+				/******** Student code here ********/
+				
+				/*Set the value of the output signals
+				when Opcode = 7'b0110011* (ADD ,SUB ,SLL, 
+				SLT, SLTU, XOR, SRL, SRA, OR, AND, MUL)/
+				
+				
+				
+				
+			
+				 /******** End of student code ********/
+				end
+						
 				default:
 				begin
 					IDU_Not_Branch_Jump_Op = 1'b0;

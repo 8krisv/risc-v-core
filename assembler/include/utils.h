@@ -17,14 +17,9 @@
 //#
 //########################################################################*/
 
-
 #ifndef UTILS
 #define UTILS
 
-
-/*soported operations*/
-
-#define NUM_OPS 38
 
 typedef struct op_data_struct{
  
@@ -46,7 +41,21 @@ char* REGISTER_NAMES[32]={
 };
 
 
-/*sorted arrat of operation lexemes*/
+/********** Student code here **********/
+
+/*You must modify the OP_LEXEME, OP_OPCODES,
+OP_FUNCT3 arrays to include the new values 
+corresponding to the mul instruction. Remember
+that OP_LEXEMES is an array Lexicographic ordered,
+it is done in this way to create from it a fully 
+balanced binary tree so that the time complexity 
+of searches is effectively O(log(n)). If you need 
+help to sort the new array look at the file sort.c*/
+
+/*number of soported operations*/
+#define NUM_OPS 38
+
+/*sorted array of operation lexemes*/
 char* OP_LEXEMES[NUM_OPS]={
 "$stop","add","addi","and",
 "andi","auipc","beq","bge",
@@ -59,7 +68,8 @@ char* OP_LEXEMES[NUM_OPS]={
 "srl","srli","sub","sw",
 "xor","xori"};
 
-
+/*array of opcode values according to the order 
+of the instructions in the OP_LEXEMES array*/
 const char OP_OPCODES[NUM_OPS]={
 0x0f,0x33,0x13,0x33,
 0x13,0x17,0x63,0x63,
@@ -72,7 +82,7 @@ const char OP_OPCODES[NUM_OPS]={
 0x33,0x13,0x33,0x23,
 0x33,0x13};
 
-
+/*array of funct3 values*/
 const char OP_FUNCT3[]={
 0xff,0x00,0x00,0x07,
 0x07,0xff,0x00,0x05,
@@ -84,5 +94,8 @@ const char OP_FUNCT3[]={
 0x03,0x03,0x05,0x05,
 0x05,0x05,0x00,0x02,
 0x04,0x04};
+
+
+/********** End of student code **********/
 
 #endif

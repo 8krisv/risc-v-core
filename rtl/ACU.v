@@ -25,8 +25,8 @@ module ACU(
 
 ACU_AluOP_InBUS,
 ACU_Funt3_InBUS,
-ACU_Funt7_b5, /*bit 5 of the funct7 field*/
-ACU_Opcode_b5, /*bit 5 of the opcode field*/
+ACU_Funt7_InBUS, /*bit 5 of the funct7 field*/
+ACU_Opcode_InBUS, /*bit 5 of the opcode field*/
 
 //// outputs ///
 ACU_AluControl_OutBUS
@@ -39,8 +39,8 @@ ACU_AluControl_OutBUS
 
 input [1:0] ACU_AluOP_InBUS;
 input [2:0] ACU_Funt3_InBUS;
-input ACU_Funt7_b5;
-input ACU_Opcode_b5;
+input [6:0] ACU_Funt7_InBUS;
+input [6:0] ACU_Opcode_InBUS;
 output reg [3:0] ACU_AluControl_OutBUS;
 
 
@@ -59,6 +59,20 @@ localparam ADD_SUB = 3'b000,
 			  SLL     = 3'b001, // shift left logical  
 			  SRL_SRA = 3'b101; // shift right logical /  shift right arithmetic
 
+			  
+/******** Student code here ********/
+
+/*You must complete with the funct3 field
+of the new multiplication instruction*/
+
+
+
+
+
+				
+/******** End of student code ********/
+			  
+			 
 /*Alu operation control signals*/
 localparam ALU_ADD   = 4'b0000,
 			  ALU_SUB   = 4'b0001,
@@ -73,6 +87,22 @@ localparam ALU_ADD   = 4'b0000,
 			  ALU_BUFFB = 4'b1010,
 			  ALU_BUFFA = 4'b1011;
 			  
+			  
+/******** Student code here ********/
+
+/* You must complete with the Alu Opcode 
+for the new multiplication instruction.
+
+HINT: this is the same value used 
+in the file ALU.V */
+
+			  
+			  
+
+
+/******** End of student code ********/
+			  
+			  
 				
 			
 //=======================================================
@@ -82,6 +112,7 @@ localparam ALU_ADD   = 4'b0000,
 reg [3:0] Funct3_Operation;
 wire Sub_Op;
 wire Sra_Op;
+wire Mult_Op_Ext;
 
 //============================================================
 //  PARAMETER DECLARATIONS
@@ -89,36 +120,64 @@ wire Sra_Op;
 
 
 
-always@(ACU_Funt3_InBUS,Sub_Op,Sra_Op)
+always@(Mult_Op_Ext,ACU_Funt3_InBUS,Sub_Op,Sra_Op)
 begin
 
-	case(ACU_Funt3_InBUS)
+	if(Mult_Op_Ext== 1'b1) // if it is a multplication instruction 
+	begin
 	
-		ADD_SUB: if (Sub_Op) 
-						Funct3_Operation= ALU_SUB;
-					else 
-						Funct3_Operation= ALU_ADD;
+		/******** Student code here ********/
+		
+		/*You must set the value of the Funct3_Operation
+	   register according to the multiplication instruction*/
+		
+		/*
+		HINT:
+	
+			case(ACU_Funt3_InBUS)
+			
+				value0: ...
+				...
+				default: ...
+		
+			endcase
+		*/
+		
+		/******** End of student code ********/
+		
+	end
+	
+	else // instruction is R-TYPE or  ADDI,SLTI,SLTIU,XORI,ORI,ANDI,SLLI,SRLI,SRAI
+	begin
+	
+		case(ACU_Funt3_InBUS)
+	
+			ADD_SUB: if (Sub_Op) 
+							Funct3_Operation= ALU_SUB;
+						else 
+							Funct3_Operation= ALU_ADD;
 						
-		SLT: Funct3_Operation=ALU_SLT;
+			SLT: Funct3_Operation=ALU_SLT;
 		
-		SLTU: Funct3_Operation=ALU_SLTU;
+			SLTU: Funct3_Operation=ALU_SLTU;
 		
-		XOR: Funct3_Operation = ALU_XOR;
+			XOR: Funct3_Operation = ALU_XOR;
 		
-		OR: Funct3_Operation = ALU_OR;
+			OR: Funct3_Operation = ALU_OR;
 		
-		AND: Funct3_Operation = ALU_AND;
+			AND: Funct3_Operation = ALU_AND;
 		
-		SLL: Funct3_Operation = ALU_SLL;
+			SLL: Funct3_Operation = ALU_SLL;
 		
-		SRL_SRA: if(Sra_Op)
-						Funct3_Operation= ALU_SRA;
-					else
-						Funct3_Operation=ALU_SRL;	
+			SRL_SRA: if(Sra_Op)
+							Funct3_Operation= ALU_SRA;
+						else
+							Funct3_Operation=ALU_SRL;	
 		
-		default: Funct3_Operation=4'bxxxx;
-		
-	endcase
+			default: Funct3_Operation=4'bxxxx;
+			
+		endcase
+	end
 	
 
 end 
@@ -144,8 +203,9 @@ begin
 end
 
 
-assign Sub_Op = ACU_Opcode_b5&ACU_Funt7_b5;
-assign Sra_Op = ACU_Funt7_b5;
+assign Sub_Op = ACU_Opcode_InBUS[5]&ACU_Funt7_InBUS[5];
+assign Sra_Op = ACU_Funt7_InBUS[5];
+assign Mult_Op_Ext = (~ACU_Opcode_InBUS[6])&(ACU_Opcode_InBUS[5])&(ACU_Opcode_InBUS[4])&(~ACU_Opcode_InBUS[3])&(~ACU_Opcode_InBUS[2])&(ACU_Opcode_InBUS[1])&(ACU_Opcode_InBUS[0])&(ACU_Funt7_InBUS[0]);
 
 
 endmodule

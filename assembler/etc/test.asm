@@ -79,6 +79,11 @@ jalr x1 4(x2)
 lui x0 0x00007000
 auipc x0 0x00007000
 
+
+#-- Multiplication instruction --#
+mul x1 x2 x3
+
+
 #-- stop --#
 $stop
 
