@@ -127,7 +127,7 @@ end
 always@(ACU_AluOP_InBUS,Funct3_Operation)
 begin
 	
-	casex(ACU_AluOP_InBUS)
+	casez(ACU_AluOP_InBUS)
 		
 		2'b00: ACU_AluControl_OutBUS=Funct3_Operation;
 		

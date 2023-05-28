@@ -55,8 +55,8 @@ localparam [2:0] State_Wait_Valid   	= 3'b100;
 localparam [2:0] State_Wait_Ready  		= 3'b101;
 
 /// load/store instruction ///
-localparam LOAD 			= 8'b0000011;
-localparam STORE 			= 8'b0100011;
+localparam LOAD 			= 7'b0000011;
+localparam STORE 			= 7'b0100011;
 
 //=======================================================
 //  PORT declarations

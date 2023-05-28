@@ -1,6 +1,6 @@
 Analysis & Synthesis report for CORE-RISC-V
-Tue Aug  9 14:39:10 2022
-Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Fri May 12 08:17:51 2023
+Quartus Prime Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 
 
 ---------------------
@@ -78,7 +78,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -95,27 +95,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Aug  9 14:39:10 2022       ;
-; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name                   ; CORE-RISC-V                                 ;
-; Top-level Entity Name           ; CORE                                        ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 1062                                        ;
-; Total pins                      ; 172                                         ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri May 12 08:17:51 2023          ;
+; Quartus Prime Version           ; 22.1std.1 Build 917 02/14/2023 SC Lite Edition ;
+; Revision Name                   ; CORE-RISC-V                                    ;
+; Top-level Entity Name           ; CORE                                           ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 1062                                           ;
+; Total pins                      ; 172                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -337,18 +337,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |CORE|MCU:Mcu|State_Register                                                                                                                                                                            ;
-+---------------------------------+---------------------------------+---------------------------------+-----------------------------+----------------------------+---------------------------+----------------------------+
-; Name                            ; State_Register.State_Wait_Ready ; State_Register.State_Wait_Valid ; State_Register.State_Decode ; State_Register.State_Fetch ; State_Register.State_Wait ; State_Register.State_reset ;
-+---------------------------------+---------------------------------+---------------------------------+-----------------------------+----------------------------+---------------------------+----------------------------+
-; State_Register.State_reset      ; 0                               ; 0                               ; 0                           ; 0                          ; 0                         ; 0                          ;
-; State_Register.State_Wait       ; 0                               ; 0                               ; 0                           ; 0                          ; 1                         ; 1                          ;
-; State_Register.State_Fetch      ; 0                               ; 0                               ; 0                           ; 1                          ; 0                         ; 1                          ;
-; State_Register.State_Decode     ; 0                               ; 0                               ; 1                           ; 0                          ; 0                         ; 1                          ;
-; State_Register.State_Wait_Valid ; 0                               ; 1                               ; 0                           ; 0                          ; 0                         ; 1                          ;
-; State_Register.State_Wait_Ready ; 1                               ; 0                               ; 0                           ; 0                          ; 0                         ; 1                          ;
-+---------------------------------+---------------------------------+---------------------------------+-----------------------------+----------------------------+---------------------------+----------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |CORE|MCU:Mcu|State_Register                                                                                                                                                                          ;
++---------------------------------+---------------------------------+---------------------------------+---------------------------+----------------------------+---------------------------+----------------------------+
+; Name                            ; State_Register.State_Wait_Ready ; State_Register.State_Wait_Valid ; State_Register.State_Exec ; State_Register.State_Fetch ; State_Register.State_Wait ; State_Register.State_reset ;
++---------------------------------+---------------------------------+---------------------------------+---------------------------+----------------------------+---------------------------+----------------------------+
+; State_Register.State_reset      ; 0                               ; 0                               ; 0                         ; 0                          ; 0                         ; 0                          ;
+; State_Register.State_Wait       ; 0                               ; 0                               ; 0                         ; 0                          ; 1                         ; 1                          ;
+; State_Register.State_Fetch      ; 0                               ; 0                               ; 0                         ; 1                          ; 0                         ; 1                          ;
+; State_Register.State_Exec       ; 0                               ; 0                               ; 1                         ; 0                          ; 0                         ; 1                          ;
+; State_Register.State_Wait_Valid ; 0                               ; 1                               ; 0                         ; 0                          ; 0                         ; 1                          ;
+; State_Register.State_Wait_Ready ; 1                               ; 0                               ; 0                         ; 0                          ; 0                         ; 1                          ;
++---------------------------------+---------------------------------+---------------------------------+---------------------------+----------------------------+---------------------------+----------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -1011,7 +1011,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:13     ;
+; Top            ; 00:00:14     ;
 +----------------+--------------+
 
 
@@ -1020,8 +1020,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Aug  9 14:38:49 2022
+    Info: Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+    Info: Processing started: Fri May 12 08:17:29 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CORE-RISC-V -c CORE-RISC-V
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
@@ -1075,8 +1075,8 @@ Info (12128): Elaborating entity "JCU" for hierarchy "JCU:Jcu" File: /home/krisv
 Info (12128): Elaborating entity "BRU" for hierarchy "BRU:Bru" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 309
 Info (12128): Elaborating entity "LSU" for hierarchy "LSU:Lsu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 341
 Info (12128): Elaborating entity "MUX_4_1" for hierarchy "MUX_4_1:Muxd" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 358
-Info (12128): Elaborating entity "MCU" for hierarchy "MCU:Mcu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 383
-Info (12128): Elaborating entity "IDU" for hierarchy "IDU:IDU" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 404
+Info (12128): Elaborating entity "MCU" for hierarchy "MCU:Mcu" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 384
+Info (12128): Elaborating entity "IDU" for hierarchy "IDU:IDU" File: /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v Line: 401
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -1086,9 +1086,9 @@ Info (21057): Implemented 2651 device resources after synthesis - the final reso
     Info (21059): Implemented 103 output pins
     Info (21061): Implemented 2479 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 484 megabytes
-    Info: Processing ended: Tue Aug  9 14:39:10 2022
-    Info: Elapsed time: 00:00:21
+    Info: Peak virtual memory: 509 megabytes
+    Info: Processing ended: Fri May 12 08:17:51 2023
+    Info: Elapsed time: 00:00:22
     Info: Total CPU time (on all processors): 00:00:35
 
 

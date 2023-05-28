@@ -92,12 +92,12 @@ wire Lui_Store_TypeR_Op ;
 always@(IDU_Opcode_InBUS,IDU_Mcu_State,Lui_Store_TypeR_Op)
 begin
 
-	casex(IDU_Mcu_State)
+	casez(IDU_Mcu_State)
 	
 		State_Exec:
 		begin
 		
-			casex(IDU_Opcode_InBUS)
+			casez(IDU_Opcode_InBUS)
 			
 				LUI_AUIPC:
 				begin

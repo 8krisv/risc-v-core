@@ -61,7 +61,7 @@ reg  [31:0] Tmp_Imm;
 always@(*)
 begin 
 	
-	casex(Opcode)
+	casez(Opcode)
 	
 		I_TYPE_0: if(Funct3 != SLTIU) begin
 						Tmp_Imm = {{21{IMM_GEN_ins_InBUS[31]}}, // 21

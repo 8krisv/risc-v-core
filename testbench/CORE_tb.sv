@@ -29,7 +29,7 @@ module CORE_tb();
 parameter DATAWIDTH=32;
 parameter INS_MEM_ADDR_WIDTH=10;
 parameter DATA_MEM_ADDR_WIDTH=10;
-parameter PROGRAMPATH = "../testcases/test.bin";
+parameter PROGRAMPATH = "../testcases/collatz.bin";
 
 
 //////////// counter declaration ////////////

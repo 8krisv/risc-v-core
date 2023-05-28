@@ -1,9 +1,9 @@
 
 State Machine - |CORE|MCU:Mcu|State_Register
-Name State_Register.State_Wait_Ready State_Register.State_Wait_Valid State_Register.State_Decode State_Register.State_Fetch State_Register.State_Wait State_Register.State_reset 
+Name State_Register.State_Wait_Ready State_Register.State_Wait_Valid State_Register.State_Exec State_Register.State_Fetch State_Register.State_Wait State_Register.State_reset 
 State_Register.State_reset 0 0 0 0 0 0 
 State_Register.State_Wait 0 0 0 0 1 1 
 State_Register.State_Fetch 0 0 0 1 0 1 
-State_Register.State_Decode 0 0 1 0 0 1 
+State_Register.State_Exec 0 0 1 0 0 1 
 State_Register.State_Wait_Valid 0 1 0 0 0 1 
 State_Register.State_Wait_Ready 1 0 0 0 0 1 

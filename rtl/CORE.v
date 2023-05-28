@@ -85,7 +85,8 @@ wire [4:0] Rs1_InBUS_Wire;
 wire [4:0] Rs2_InBUS_Wire;
 wire [4:0] Rd_InBUS_Wire;
 wire [6:0] Opcode_InBUS_Wire;
-wire [6:0] Funct7_InBUS_Wire;
+//wire [6:0] Funct7_InBUS_Wire;
+wire Funct7_InBUS_Wire_5;
 wire [2:0] Funct3_InBUS_Wire;
 
 wire Idu_Not_Branch_Jump_Op_Wire;
@@ -255,7 +256,7 @@ ACU Acu(
 
 .ACU_AluOP_InBUS(Idu_AluOp_OutBUS_Wire),
 .ACU_Funt3_InBUS(Funct3_InBUS_Wire),
-.ACU_Funt7_b5(Funct7_InBUS_Wire[5]), /*bit 5 of the funct7 field*/
+.ACU_Funt7_b5(Funct7_InBUS_Wire_5), /*bit 5 of the funct7 field*/
 .ACU_Opcode_b5(Opcode_InBUS_Wire[5]), /*bit 5 of the opcode field*/
 
 //// outputs ///
@@ -411,7 +412,8 @@ assign Rs2_InBUS_Wire = Iregister_OutBUS_Wire[24:20];
 assign Rs1_InBUS_Wire = Iregister_OutBUS_Wire[19:15];
 assign Rd_InBUS_Wire = Iregister_OutBUS_Wire[11:7];
 assign Opcode_InBUS_Wire = Iregister_OutBUS_Wire[6:0];
-assign Funct7_InBUS_Wire = Iregister_OutBUS_Wire[31:25];
+//assign Funct7_InBUS_Wire = Iregister_OutBUS_Wire[31:25];
+assign Funct7_InBUS_Wire_5 = Iregister_OutBUS_Wire[29];
 assign Funct3_InBUS_Wire = Iregister_OutBUS_Wire[14:12];
 
 

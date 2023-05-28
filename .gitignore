@@ -5,3 +5,4 @@
 *.txt
 testcases/*
 !/testcases/finonacci.asm
+!/testcases/collatz.asm

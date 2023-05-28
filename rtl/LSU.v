@@ -75,7 +75,7 @@ reg [3:0] Byteenable;
 
 always@(*)
 begin	
-	casex(LSU_Funct3_InBUS)
+	casez(LSU_Funct3_InBUS)
 		3'b?00: Byteenable = ONE_BYTE;   /* load/store 1 byte  or load 1 byte unsigned */
 		3'b?01: Byteenable = TWO_BYTES;  /* load/store 2 bytes  or load 1 bytes unsigned */
 		3'b010: Byteenable = FOUR_BYTES; /*load/store 1 word(4 byes) */

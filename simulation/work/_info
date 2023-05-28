@@ -10,23 +10,23 @@ z2
 cModel Technology
 d/home/krisv/intelFPGA_lite/20.1/modelsim_ase/bin
 vACU
-Z0 !s110 1661115538
+Z0 !s110 1685302027
 !i10b 1
-!s100 FB_OHfYlIjO[;8T@gQF_o0
+!s100 fTgJ;7cM<6ohWO=JUl0[d3
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IhcVNoG9H<m];GV^6PnXj[1
+I5jYYc9>mh[fb4[=;DlLBz3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 d/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/simulation
-w1657073983
+w1685298239
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v
-!i122 206
+!i122 391
 L0 22 130
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1661115538.000000
+Z5 !s108 1685302027.000000
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ACU.v|
 !i113 1
@@ -44,7 +44,7 @@ R3
 w1657144558
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ADDER.v
-!i122 207
+!i122 392
 L0 22 23
 R4
 r1
@@ -68,7 +68,7 @@ R3
 w1657073754
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ALU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/ALU.v
-!i122 208
+!i122 393
 L0 22 96
 R4
 r1
@@ -82,23 +82,23 @@ R6
 R7
 n@a@l@u
 vAXI_RAM
-Z8 !s110 1661115539
+Z8 !s110 1685302028
 !i10b 1
 !s100 Xd?X83M[:@e:37h]6[zOJ3
 R1
 IMQ93=HZ7B3I4]792WPm3B0
 R2
 R3
-Z9 w1661112437
+Z9 w1661293124
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v
-!i122 228
+!i122 413
 L0 23 80
 R4
 r1
 !s85 0
 31
-Z10 !s108 1661115539.000000
+Z10 !s108 1685302028.000000
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/AXI_RAM.v|
 !i113 1
@@ -116,7 +116,7 @@ R3
 R9
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/AXI_RAM_tb.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/AXI_RAM_tb.v
-!i122 227
+!i122 412
 L0 5 76
 R4
 r1
@@ -140,7 +140,7 @@ R3
 w1658222811
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/BRU.v
-!i122 209
+!i122 394
 L0 22 68
 R4
 r1
@@ -154,18 +154,18 @@ R6
 R7
 n@b@r@u
 vCORE
-R8
+R0
 !i10b 1
-!s100 fSzae`VI]M[SW_Aze8lEk3
+!s100 Y]>aoN^9S9CiCKQ]@Ziiz3
 R1
-I@]mI=LQU8@7VTJdLbi7J53
+IB8^dk>ANH:k43Ra4lg:i]1
 R2
 R3
-R9
+w1685302019
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/CORE.v
-!i122 210
-L0 22 397
+!i122 395
+L0 22 399
 R4
 r1
 !s85 0
@@ -179,24 +179,24 @@ R7
 n@c@o@r@e
 vCORE_tb
 Z11 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-R8
+!s110 1685302150
 !i10b 1
-!s100 :Q<1O]L24Z]7731Jcd_>T2
+!s100 >_zjIo4@@iR]Poba0de2b2
 R1
-ISVT;oc_2j4@A8;1>KV[g61
+I``o7F7=^9]U]WP]9]cB_<0
 R2
 S1
 R3
-R9
+w1685302134
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv
-!i122 226
+!i122 414
 L0 24 148
 R4
 r1
 !s85 0
 31
-R10
+!s108 1685302150.000000
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/testbench/CORE_tb.sv|
 !i113 1
@@ -205,7 +205,7 @@ R7
 n@c@o@r@e_tb
 vDATAMEM
 R11
-R8
+R0
 !i10b 1
 !s100 Z380]?63N`4ahime5NFez1
 R1
@@ -216,13 +216,13 @@ R3
 R9
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv
-!i122 211
+!i122 396
 L0 24 201
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DATAMEM.sv|
 !i113 1
@@ -230,7 +230,7 @@ R12
 R7
 n@d@a@t@a@m@e@m
 vDEMUX_1_32
-R8
+R0
 !i10b 1
 !s100 <NlljHP6o>jWXE6i72`5R3
 R1
@@ -240,13 +240,13 @@ R3
 w1656982768
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v
-!i122 212
+!i122 397
 L0 22 86
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/DEMUX_1_32.v|
 !i113 1
@@ -278,23 +278,23 @@ R6
 R7
 n@e@n@p@c
 vIDU
-R8
+R0
 !i10b 1
-!s100 =9FW6`m2nUAYTgHl_U=TE0
+!s100 Mo]eTXR^U=QK31fFd0VoJ0
 R1
-I5]NPDYh5;e00X1g[5j3A=0
+I>L2<GZ3kRN8Nik>dL6=:l2
 R2
 R3
-R9
+w1685298298
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v
-!i122 213
+!i122 398
 L0 22 184
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IDU.v|
 !i113 1
@@ -302,23 +302,23 @@ R6
 R7
 n@i@d@u
 vIMM_GEN
-R8
+R0
 !i10b 1
-!s100 lkb98ZPQDB@_zRSDMCHz=1
+!s100 hKcL1XfHX3^L==IgZ7e<S3
 R1
-I7=F179doOmGb>PidWo[Km0
+Iz:25[Dmbhef>nWKNVRC9b1
 R2
 R3
-w1658432678
+w1685298212
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v
-!i122 214
+!i122 399
 L0 22 90
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMM_GEN.v|
 !i113 1
@@ -326,7 +326,7 @@ R6
 R7
 n@i@m@m_@g@e@n
 vIMRD
-R8
+R0
 !i10b 1
 !s100 YMKH5mX29QX1W:fI3]Mgl3
 R1
@@ -336,13 +336,13 @@ R3
 w1657256215
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMRD.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMRD.v
-!i122 215
+!i122 400
 L0 22 20
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMRD.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/IMRD.v|
 !i113 1
@@ -351,7 +351,7 @@ R7
 n@i@m@r@d
 vINS_MEM
 R11
-R8
+R0
 !i10b 1
 !s100 8^3h918JR_NU:a;_F?BGD2
 R1
@@ -359,16 +359,16 @@ IC6P57SjBjgUEhZ;UW09zj1
 R2
 S1
 R3
-R9
+w1684210836
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv
-!i122 216
+!i122 401
 L0 23 121
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/INS_MEM.sv|
 !i113 1
@@ -376,7 +376,7 @@ R12
 R7
 n@i@n@s_@m@e@m
 vJCU
-R8
+R0
 !i10b 1
 !s100 9zmikgnWli[zZBAXi=?_N2
 R1
@@ -386,13 +386,13 @@ R3
 w1657074021
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v
-!i122 217
+!i122 402
 L0 22 28
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/JCU.v|
 !i113 1
@@ -400,23 +400,23 @@ R6
 R7
 n@j@c@u
 vLSU
-R8
+R0
 !i10b 1
-!s100 ELUB`I^gX;hj:aXPM<@E92
+!s100 hOi4ezK5hfER1i>XmFhCf2
 R1
-IlOi]7d1zQ7]DF6?Gh9V9J0
+I`?ih19jGC7?9iO321SQ_?3
 R2
 R3
-w1657237240
+w1685298256
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v
-!i122 218
+!i122 403
 L0 22 94
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/LSU.v|
 !i113 1
@@ -424,23 +424,23 @@ R6
 R7
 n@l@s@u
 vMCU
-R8
+R0
 !i10b 1
-!s100 Y33XcU6;^@QRaQ72gHCBY1
+!s100 U71GXANk7cn=@@0Pm74]o0
 R1
-IGF[RT9]@lCb3M1W<^ke:W2
+I?`Y0G3A0>z2Vgcj^A30[`0
 R2
 R3
-R9
+w1685298159
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v
-!i122 219
+!i122 404
 L0 22 250
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MCU.v|
 !i113 1
@@ -448,7 +448,7 @@ R6
 R7
 n@m@c@u
 vMUX_2_1
-R8
+R0
 !i10b 1
 !s100 gDMOI=<PKS4@DB4DbBI@^0
 R1
@@ -458,13 +458,13 @@ R3
 w1657075158
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v
-!i122 220
+!i122 405
 L0 23 29
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_2_1.v|
 !i113 1
@@ -472,7 +472,7 @@ R6
 R7
 n@m@u@x_2_1
 vMUX_32_1
-R8
+R0
 !i10b 1
 !s100 2PfVjEUP6RTemWGH@K_RG3
 R1
@@ -482,13 +482,13 @@ R3
 w1657074888
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v
-!i122 222
+!i122 407
 L0 22 95
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_32_1.v|
 !i113 1
@@ -496,7 +496,7 @@ R6
 R7
 n@m@u@x_32_1
 vMUX_4_1
-R8
+R0
 !i10b 1
 !s100 M?h8aklVRM>oTN_eTJS>Q3
 R1
@@ -506,13 +506,13 @@ R3
 w1657075757
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v
-!i122 221
+!i122 406
 L0 22 34
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/MUX_4_1.v|
 !i113 1
@@ -520,7 +520,7 @@ R6
 R7
 n@m@u@x_4_1
 vREG_FILE
-R8
+R0
 !i10b 1
 !s100 e2Za5MEH6bfaMP>EozW`G2
 R1
@@ -530,13 +530,13 @@ R3
 R9
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v
-!i122 223
+!i122 408
 L0 22 682
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_FILE.v|
 !i113 1
@@ -544,7 +544,7 @@ R6
 R7
 n@r@e@g_@f@i@l@e
 vREG_NEG
-R8
+R0
 !i10b 1
 !s100 PmnDoK[7Qz00Y[VAVG:TA1
 R1
@@ -554,13 +554,13 @@ R3
 R9
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v
-!i122 224
+!i122 409
 Z15 L0 23 56
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_NEG.v|
 !i113 1
@@ -568,7 +568,7 @@ R6
 R7
 n@r@e@g_@n@e@g
 vREG_POS
-R8
+R0
 !i10b 1
 !s100 IWiAXHj`d=h=CIWz:S7;X0
 R1
@@ -578,13 +578,13 @@ R3
 R9
 8/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v
 F/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v
-!i122 225
+!i122 410
 R15
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 /home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/krisv/Documentos/maestria/Arquitectura/risc-v-core/rtl/REG_POS.v|
 !i113 1
