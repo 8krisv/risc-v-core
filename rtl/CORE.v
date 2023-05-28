@@ -125,7 +125,7 @@ wire [DATAWIDTH-1:0] Add0_Rest_OutBUS_Wire;
 wire [2:0] Mcu_State_Wire;
 wire Mcu_Pc_Reset_Wire;
 wire Mcu_Enpc_set_Wire;
-wire Mcu_Enpc_reset_Wire;
+//wire Mcu_Enpc_reset_Wire;
 wire Mcu_Ir_Reset_Wire;
 wire Mcu_Ir_Set_Wire;
 wire Mcu_RegFile_Reset_Wire;
@@ -374,7 +374,7 @@ MCU Mcu( // State machine
 .MCU_Internal_State(Mcu_State_Wire),
 .MCU_Pc_Reset(Mcu_Pc_Reset_Wire), 
 .MCU_Enpc_Set(Mcu_Enpc_set_Wire),
-.MCU_Enpc_Reset(Mcu_Enpc_reset_Wire),
+//.MCU_Enpc_Reset(Mcu_Enpc_reset_Wire),
 .MCU_Ir_Reset(Mcu_Ir_Reset_Wire),
 .MCU_Ir_Set(Mcu_Ir_Set_Wire),
 .MCU_RegFIle_Reset(Mcu_RegFile_Reset_Wire),

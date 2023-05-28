@@ -33,7 +33,7 @@ MCU_Opcode_InBUS,
 MCU_Internal_State,
 MCU_Pc_Reset, 
 MCU_Enpc_Set, 
-MCU_Enpc_Reset, 
+//MCU_Enpc_Reset, 
 MCU_Ir_Reset,
 MCU_Ir_Set,
 MCU_RegFIle_Reset,
@@ -71,7 +71,7 @@ input [6:0] MCU_Opcode_InBUS;
 output [2:0] MCU_Internal_State;
 output reg MCU_Pc_Reset;
 output reg MCU_Enpc_Set;
-output reg MCU_Enpc_Reset;
+//output reg MCU_Enpc_Reset;
 output reg MCU_Ir_Reset;
 output reg MCU_Ir_Set;
 output reg MCU_RegFIle_Reset;
@@ -169,7 +169,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b1; 
 			MCU_Enpc_Set=1'b0;
-			MCU_Enpc_Reset=1'b0;
+			//MCU_Enpc_Reset=1'b0;
 			MCU_Ir_Reset=1'b1;
 			MCU_Ir_Set=1'b0;
 			MCU_RegFIle_Reset=1'b1;
@@ -183,7 +183,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b0; 
 			MCU_Enpc_Set=1'b0;
-			MCU_Enpc_Reset=1'b1;
+			//MCU_Enpc_Reset=1'b1;
 			MCU_Ir_Reset=1'b0;
 			MCU_Ir_Set=1'b0;
 			MCU_RegFIle_Reset=1'b0;
@@ -196,7 +196,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b0; 
 			MCU_Enpc_Set=1'b0;
-			MCU_Enpc_Reset=1'b1;
+			//MCU_Enpc_Reset=1'b1;
 			MCU_Ir_Reset=1'b0;
 			MCU_Ir_Set=1'b1;
 			MCU_RegFIle_Reset=1'b0;
@@ -210,7 +210,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b0; 
 			MCU_Enpc_Set=1'b1;
-			MCU_Enpc_Reset=1'b1;
+			//MCU_Enpc_Reset=1'b1;
 			MCU_Ir_Reset=1'b0;
 			MCU_Ir_Set=1'b0;
 			MCU_RegFIle_Reset=1'b0;
@@ -224,7 +224,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b0; 
 			MCU_Enpc_Set=1'b0;
-			MCU_Enpc_Reset=1'b0;
+			//MCU_Enpc_Reset=1'b0;
 			MCU_Ir_Reset=1'b0;
 			MCU_Ir_Set=1'b0;
 			MCU_RegFIle_Reset=1'b0;
@@ -239,7 +239,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b0; 
 			MCU_Enpc_Set=1'b0;
-			MCU_Enpc_Reset=1'b0;
+			//MCU_Enpc_Reset=1'b0;
 			MCU_Ir_Reset=1'b0;
 			MCU_Ir_Set=1'b0;
 			MCU_RegFIle_Reset=1'b0;
@@ -252,7 +252,7 @@ begin
 		begin
 			MCU_Pc_Reset=1'b1; 
 			MCU_Enpc_Set=1'b0;
-			MCU_Enpc_Reset=1'b0;
+			//MCU_Enpc_Reset=1'b0;
 			MCU_Ir_Reset=1'b1;
 			MCU_Ir_Set=1'b0;
 			MCU_RegFIle_Reset=1'b1;
