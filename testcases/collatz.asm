@@ -2,7 +2,7 @@
 # Collatz sequence
 #########################################################################
 #
-# Copyright (C) 2021 José Maria Jaramillo Hoyos
+# Copyright (C) 2023 José Maria Jaramillo Hoyos
 # 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 ## x3 = global data pointer
 ## x4 = thread pointer
 ## x5,x6,x7,x28,x29,x30,x31 = used by caller
-## x8,x9,x18-x27 = used by calle
+## x8,x9,x18-x27 = used by callee
 ## x10 - x17 = return/arguments spaces by caller and callee
 
 
@@ -41,7 +41,7 @@ main: ## caller main function
 	beq  x0 x0 collatz 
 
 
-collatz: ## calle function (Collatz sequence) 
+collatz: ## callee function (Collatz sequence) 
 
 	addi x7 x0 1
 	addi x29 x0 2
@@ -68,7 +68,7 @@ compare:
 	beq x5 x7 end # if x5 is equal to 1
 	beq  x0 x0 begin
 	
-mult: # calle function return on x10 the result of x11 (multiplier) * x12 (multiplicand) (multiply algorithm) 
+mult: # callee function return on x10 the result of x11 (multiplier) * x12 (multiplicand) (multiply algorithm) 
 	addi x9 x0 1 # get one to compare LSB of multiplier
 	addi x10 x0 0 # clear x10 to return result of multiplication
 mult1: 
